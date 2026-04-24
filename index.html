@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Karakter GLG Industries (CH 1–5) — GLG Wiki</title>
+    <title>Database Karakter GLG Industries (CH 1–8) — GLG Wiki</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <style>
@@ -37,6 +37,8 @@
             --wiki-notice-green-border: #1a8754;
             --wiki-notice-purple: #e8d5f5;
             --wiki-notice-purple-border: #9b59b6;
+            --wiki-notice-orange: #fef3e2;
+            --wiki-notice-orange-border: #edab00;
         }
 
         body {
@@ -48,7 +50,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== TOP BAR ===== */
         .wiki-topbar {
             background: #fff;
             border-bottom: 1px solid var(--wiki-border-light);
@@ -61,11 +62,7 @@
             top: 0;
             z-index: 100;
         }
-        .wiki-topbar-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+        .wiki-topbar-left { display: flex; align-items: center; gap: 16px; }
         .wiki-logo {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -84,10 +81,7 @@
             color: #fff; font-size: 14px; font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
-        .wiki-topbar-nav {
-            display: flex;
-            gap: 4px;
-        }
+        .wiki-topbar-nav { display: flex; gap: 4px; }
         .wiki-topbar-nav a {
             color: var(--wiki-link);
             text-decoration: none;
@@ -96,15 +90,8 @@
             border-radius: 2px;
             transition: background 0.15s;
         }
-        .wiki-topbar-nav a:hover {
-            background: #eaecf0;
-            text-decoration: none;
-        }
-        .wiki-topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .wiki-topbar-nav a:hover { background: #eaecf0; text-decoration: none; }
+        .wiki-topbar-right { display: flex; align-items: center; gap: 8px; }
         .wiki-topbar-right .iconify { color: var(--wiki-text-light); font-size: 18px; cursor: pointer; }
         .wiki-topbar-search {
             display: flex;
@@ -132,7 +119,6 @@
         }
         .wiki-topbar-search button:hover { background: #ddd; }
 
-        /* ===== SIDEBAR ===== */
         .wiki-layout {
             display: flex;
             max-width: 1360px;
@@ -173,7 +159,6 @@
         .wiki-sidebar a:hover { text-decoration: underline; }
         .wiki-sidebar a.active { color: var(--wiki-text); font-weight: 600; }
 
-        /* ===== MAIN CONTENT ===== */
         .wiki-content {
             flex: 1;
             background: #fff;
@@ -182,7 +167,6 @@
             min-width: 0;
         }
 
-        /* Article Header */
         .wiki-article-header {
             border-bottom: 1px solid var(--wiki-border-light);
             padding: 20px 32px 16px;
@@ -203,11 +187,7 @@
             color: var(--wiki-text-light);
             margin-top: 4px;
         }
-        .wiki-article-actions {
-            display: flex;
-            gap: 8px;
-            flex-shrink: 0;
-        }
+        .wiki-article-actions { display: flex; gap: 8px; flex-shrink: 0; }
         .wiki-btn {
             font-size: 12px;
             padding: 5px 12px;
@@ -222,27 +202,17 @@
         }
         .wiki-btn:hover { background: #eaecf0; }
 
-        /* Article Body */
         .wiki-article-body {
             padding: 24px 32px 48px;
             display: flex;
             gap: 24px;
             align-items: flex-start;
         }
-        .wiki-article-text {
-            flex: 1;
-            min-width: 0;
-        }
+        .wiki-article-text { flex: 1; min-width: 0; }
 
-        /* Lead */
-        .wiki-lead {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
+        .wiki-lead { font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
         .wiki-lead p { margin-bottom: 12px; }
 
-        /* Notices */
         .wiki-notice {
             border: 1px solid;
             border-radius: 2px;
@@ -264,8 +234,9 @@
         .wiki-notice-green .iconify { color: var(--wiki-green); }
         .wiki-notice-purple { background: var(--wiki-notice-purple); border-color: var(--wiki-notice-purple-border); }
         .wiki-notice-purple .iconify { color: #9b59b6; }
+        .wiki-notice-orange { background: var(--wiki-notice-orange); border-color: var(--wiki-notice-orange-border); }
+        .wiki-notice-orange .iconify { color: #b45309; }
 
-        /* TOC */
         .wiki-toc {
             background: var(--wiki-toc-bg);
             border: 1px solid var(--wiki-border-light);
@@ -273,29 +244,18 @@
             padding: 16px 20px;
             margin: 20px 0 24px;
             display: inline-block;
-            min-width: 280px;
+            min-width: 300px;
             max-width: 100%;
         }
-        .wiki-toc-title {
-            font-weight: 700;
-            font-size: 14px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+        .wiki-toc-title { font-weight: 700; font-size: 14px; text-align: center; margin-bottom: 10px; }
         .wiki-toc ul { list-style: none; }
         .wiki-toc li { margin-bottom: 3px; }
-        .wiki-toc a {
-            color: var(--wiki-link);
-            text-decoration: none;
-            font-size: 13px;
-        }
+        .wiki-toc a { color: var(--wiki-link); text-decoration: none; font-size: 13px; }
         .wiki-toc a:hover { text-decoration: underline; }
         .wiki-toc .toc-level-1 { padding-left: 0; }
         .wiki-toc .toc-level-2 { padding-left: 20px; }
-        .wiki-toc .toc-level-3 { padding-left: 40px; }
         .wiki-toc .toc-number { margin-right: 6px; color: var(--wiki-text-light); }
 
-        /* Sections */
         .wiki-section { margin-bottom: 28px; scroll-margin-top: 70px; }
         .wiki-section-header {
             font-family: 'Source Serif 4', 'Playfair Display', Georgia, serif;
@@ -331,42 +291,25 @@
             margin-top: 16px;
         }
         .wiki-section p { margin-bottom: 10px; }
-        .wiki-section ul, .wiki-section ol {
-            margin: 8px 0 12px 24px;
-        }
+        .wiki-section ul, .wiki-section ol { margin: 8px 0 12px 24px; }
         .wiki-section li { margin-bottom: 4px; }
 
-        /* Wiki Links */
         a.wiki-link { color: var(--wiki-link); text-decoration: none; }
         a.wiki-link:hover { text-decoration: underline; }
-        a.wiki-link-red { color: var(--wiki-red); }
-        a.wiki-link-red:hover { text-decoration: underline; }
 
-        /* Tables */
-        .wiki-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 12px 0 18px;
-            font-size: 13px;
-        }
+        .wiki-table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 13px; }
         .wiki-table th, .wiki-table td {
             border: 1px solid var(--wiki-border-light);
             padding: 7px 10px;
             text-align: left;
             vertical-align: top;
         }
-        .wiki-table th {
-            background: var(--wiki-table-header);
-            font-weight: 600;
-            font-size: 12.5px;
-        }
+        .wiki-table th { background: var(--wiki-table-header); font-weight: 600; font-size: 12.5px; }
         .wiki-table tr:nth-child(even) { background: var(--wiki-table-stripe); }
         .wiki-table tr:hover { background: #eaf3ff; }
-
         .wiki-table-wide { font-size: 12.5px; }
         .wiki-table-wide th, .wiki-table-wide td { padding: 6px 8px; }
 
-        /* Infobox */
         .wiki-infobox {
             width: 300px;
             min-width: 300px;
@@ -411,11 +354,7 @@
             background: radial-gradient(circle at 30% 40%, rgba(220,38,38,0.15), transparent 60%),
                         radial-gradient(circle at 70% 60%, rgba(59,130,246,0.1), transparent 50%);
         }
-        .wiki-infobox-image .iconify {
-            font-size: 64px;
-            color: rgba(255,255,255,0.25);
-            z-index: 1;
-        }
+        .wiki-infobox-image .iconify { font-size: 64px; color: rgba(255,255,255,0.25); z-index: 1; }
         .wiki-infobox-image-text {
             position: absolute;
             bottom: 8px;
@@ -425,10 +364,7 @@
             color: rgba(255,255,255,0.4);
             z-index: 1;
         }
-        .wiki-infobox-row {
-            display: flex;
-            border-bottom: 1px solid var(--wiki-border-light);
-        }
+        .wiki-infobox-row { display: flex; border-bottom: 1px solid var(--wiki-border-light); }
         .wiki-infobox-row:last-child { border-bottom: none; }
         .wiki-infobox-label {
             width: 40%;
@@ -437,12 +373,8 @@
             padding: 6px 10px;
             vertical-align: top;
         }
-        .wiki-infobox-data {
-            width: 60%;
-            padding: 6px 10px;
-        }
+        .wiki-infobox-data { width: 60%; padding: 6px 10px; }
 
-        /* Character Card Mini */
         .char-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -456,9 +388,7 @@
             overflow: hidden;
             transition: box-shadow 0.2s;
         }
-        .char-card:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+        .char-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .char-card-header {
             padding: 10px 12px;
             font-weight: 600;
@@ -487,6 +417,7 @@
             border-radius: 2px;
             font-weight: 600;
             margin-top: 4px;
+            margin-right: 2px;
         }
         .tag-protagonis { background: #dbeafe; color: #1d4ed8; }
         .tag-antagonis { background: #fee2e2; color: #dc2626; }
@@ -496,8 +427,10 @@
         .tag-mysterius { background: #fef3c7; color: #d97706; }
         .tag-supreme { background: #1a1a2e; color: #fbbf24; }
         .tag-grandma { background: #f3e8ff; color: #9333ea; }
+        .tag-deus { background: #0c0a09; color: #f97316; }
+        .tag-boss { background: #450a0a; color: #fca5a5; }
+        .tag-final { background: linear-gradient(135deg, #1a1a2e, #4a044e); color: #e9d5ff; }
 
-        /* Group Cards */
         .group-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -533,10 +466,7 @@
             color: var(--wiki-text-light);
             line-height: 1.6;
         }
-        .group-card-members {
-            margin-top: 8px;
-            font-size: 11.5px;
-        }
+        .group-card-members { margin-top: 8px; font-size: 11.5px; }
         .group-card-members span {
             display: inline-block;
             background: #f0f0f0;
@@ -546,14 +476,8 @@
             color: var(--wiki-text);
         }
 
-        /* Horizontal Rule */
-        .wiki-hr {
-            border: none;
-            border-top: 1px solid var(--wiki-border-light);
-            margin: 20px 0;
-        }
+        .wiki-hr { border: none; border-top: 1px solid var(--wiki-border-light); margin: 20px 0; }
 
-        /* Quote */
         .wiki-quote {
             border-left: 3px solid var(--wiki-border);
             padding: 8px 16px;
@@ -563,7 +487,6 @@
             background: var(--wiki-toc-bg);
         }
 
-        /* Collapsible */
         .wiki-collapsible-header {
             background: var(--wiki-table-header);
             border: 1px solid var(--wiki-border-light);
@@ -593,7 +516,6 @@
         }
         .wiki-collapsible-body.open { display: block; }
 
-        /* Footer */
         .wiki-footer {
             background: #fff;
             border-top: 1px solid var(--wiki-border-light);
@@ -605,7 +527,6 @@
         .wiki-footer a { color: var(--wiki-link); text-decoration: none; }
         .wiki-footer a:hover { text-decoration: underline; }
 
-        /* Religion Box */
         .religion-box {
             border: 1px solid var(--wiki-border-light);
             border-radius: 2px;
@@ -624,87 +545,66 @@
         .religion-box h4 { font-size: 14px; margin-bottom: 3px; }
         .religion-box p { font-size: 12.5px; color: var(--wiki-text-light); line-height: 1.5; }
 
-        /* Stats Bar */
         .stats-bar-container { margin: 12px 0 18px; }
-        .stats-bar-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 6px;
-            font-size: 12px;
-        }
-        .stats-bar-label {
-            width: 160px;
-            font-weight: 500;
-            flex-shrink: 0;
-        }
+        .stats-bar-row { display: flex; align-items: center; margin-bottom: 6px; font-size: 12px; }
+        .stats-bar-label { width: 160px; font-weight: 500; flex-shrink: 0; }
         .stats-bar-track {
-            flex: 1;
-            height: 16px;
-            background: #eaecf0;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
+            flex: 1; height: 16px; background: #eaecf0; border-radius: 2px; overflow: hidden; position: relative;
         }
         .stats-bar-fill {
-            height: 100%;
-            border-radius: 2px;
-            transition: width 1s ease;
+            height: 100%; border-radius: 2px; transition: width 1s ease;
+            display: flex; align-items: center; justify-content: flex-end;
+            padding-right: 6px; font-size: 10px; font-weight: 600; color: #fff; min-width: 30px;
+        }
+
+        /* Chapter narrative box */
+        .ch-narrative {
+            border: 1px solid var(--wiki-border-light);
+            border-radius: 3px;
+            margin: 12px 0 18px;
+            overflow: hidden;
+        }
+        .ch-narrative-header {
+            padding: 12px 16px;
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 700;
+            font-size: 15px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-right: 6px;
-            font-size: 10px;
-            font-weight: 600;
+            gap: 10px;
+        }
+        .ch-narrative-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
             color: #fff;
-            min-width: 30px;
+            flex-shrink: 0;
         }
-
-        /* Chapter tabs */
-        .chapter-tabs {
-            display: flex;
-            gap: 0;
-            margin: 12px 0 0;
-            border-bottom: 1px solid var(--wiki-border-light);
-        }
-        .chapter-tab {
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--wiki-link);
-            cursor: pointer;
-            border: 1px solid transparent;
-            border-bottom: none;
-            border-radius: 3px 3px 0 0;
-            margin-bottom: -1px;
-            transition: all 0.15s;
-            background: transparent;
-            font-family: inherit;
-        }
-        .chapter-tab:hover { background: #eaecf0; }
-        .chapter-tab.active {
-            background: #fff;
-            border-color: var(--wiki-border-light);
-            border-bottom: 1px solid #fff;
+        .ch-narrative-body {
+            padding: 12px 16px 16px;
+            font-size: 13.5px;
+            line-height: 1.7;
             color: var(--wiki-text);
-            font-weight: 600;
+            border-top: 1px solid var(--wiki-border-light);
         }
-        .chapter-panel {
-            border: 1px solid var(--wiki-border-light);
-            border-top: none;
-            padding: 14px 16px;
-            display: none;
-            font-size: 13px;
+        .ch-narrative-body p { margin-bottom: 8px; }
+        .ch-narrative-body p:last-child { margin-bottom: 0; }
+        .ch-narrative-footer {
+            padding: 8px 16px;
+            font-size: 11.5px;
+            color: var(--wiki-text-light);
+            background: var(--wiki-toc-bg);
+            border-top: 1px solid var(--wiki-border-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        .chapter-panel.active { display: block; }
+        .ch-narrative-footer .iconify { font-size: 14px; }
 
-        /* Scrollbar for main */
-        .wiki-content::-webkit-scrollbar { width: 8px; }
-        .wiki-content::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
-
-        /* Responsive */
-        @media (max-width: 1100px) {
-            .wiki-sidebar { display: none; }
-        }
+        @media (max-width: 1100px) { .wiki-sidebar { display: none; } }
         @media (max-width: 800px) {
             .wiki-article-header { padding: 16px 16px 12px; flex-direction: column; }
             .wiki-article-body { padding: 16px; flex-direction: column; }
@@ -713,10 +613,8 @@
             .wiki-topbar-search input { width: 120px; }
             .char-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
             .group-grid { grid-template-columns: 1fr; }
-            .chapter-tabs { flex-wrap: wrap; }
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(16px); }
             to { opacity: 1; transform: translateY(0); }
@@ -725,12 +623,10 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="wiki-topbar">
     <div class="wiki-topbar-left">
         <a href="#" class="wiki-logo">
@@ -753,10 +649,8 @@
     </div>
 </div>
 
-<!-- LAYOUT -->
 <div class="wiki-layout">
 
-    <!-- SIDEBAR -->
     <nav class="wiki-sidebar">
         <div class="wiki-sidebar-section">
             <div class="wiki-sidebar-heading">Navigasi</div>
@@ -772,11 +666,14 @@
         <div class="wiki-sidebar-section">
             <div class="wiki-sidebar-heading">Bab</div>
             <ul>
-                <li><a href="#ch1">Bab 1</a></li>
-                <li><a href="#ch2">Bab 2</a></li>
-                <li><a href="#ch3">Bab 3</a></li>
-                <li><a href="#ch4">Bab 4</a></li>
-                <li><a href="#ch5">Bab 5</a></li>
+                <li><a href="#ch1">Bab 1 — Ingatan & PaPer Co</a></li>
+                <li><a href="#ch2">Bab 2 — Mesin IT & Pintu</a></li>
+                <li><a href="#ch3">Bab 3 — Dalam Pabrik & Misa</a></li>
+                <li><a href="#ch4">Bab 4 — Smileng FU & Malian</a></li>
+                <li><a href="#ch5">Bab 5 — Lore & Kerabat Misa</a></li>
+                <li><a href="#ch6">Bab 6 — Bertemu Malian</a></li>
+                <li><a href="#ch7">Bab 7 — Brilioan</a></li>
+                <li><a href="#ch8">Bab 8 — SIN & Fuyunnis</a></li>
             </ul>
         </div>
         <div class="wiki-sidebar-section">
@@ -800,12 +697,11 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main class="wiki-content" id="mainContent">
         <div class="wiki-article-header animate-in">
             <div>
                 <h1 class="wiki-article-title">Database Karakter GLG Industries</h1>
-                <div class="wiki-article-subtitle">Bab 1–5 • Total: 68.618 Karakter • Franchise GLG Industries</div>
+                <div class="wiki-article-subtitle">Bab 1–8 • Total: 68.618 Karakter • Franchise GLG Industries</div>
             </div>
             <div class="wiki-article-actions">
                 <button class="wiki-btn"><span class="iconify" data-icon="lucide:edit-3" style="font-size:13px;"></span> Sunting</button>
@@ -817,10 +713,9 @@
         <div class="wiki-article-body">
             <div class="wiki-article-text">
 
-                <!-- NOTICE -->
                 <div class="wiki-notice wiki-notice-blue animate-in delay-1">
                     <span class="iconify" data-icon="lucide:info"></span>
-                    <div><strong>Artikel ini sedang dalam pengembangan.</strong> Database karakter GLG Industries mencakup 5 bab utama dengan total 68.618 karakter individu dan pasukan. Beberapa bagian mungkin belum lengkap.</div>
+                    <div><strong>Artikel ini sedang dalam pengembangan.</strong> Database karakter GLG Industries kini mencakup <strong>8 bab</strong> utama dengan total 68.618 karakter individu dan pasukan. Struktur cerita telah diperluas dari 5 bab menjadi 8 bab.</div>
                 </div>
 
                 <!-- INFOBOX -->
@@ -832,73 +727,29 @@
                         </td>
                     </tr>
                     <tr><td colspan="2" class="wiki-infobox-header">Database Karakter GLG Industries</td></tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Jumlah Bab</td>
-                        <td class="wiki-infobox-data">5</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Karakter Individu</td>
-                        <td class="wiki-infobox-data">43</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Total Karakter</td>
-                        <td class="wiki-infobox-data"><strong>68.618</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Dalang Utama</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#dalang">EX-109 (Long Hand)</a></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Pembantu Utama</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#dalang">SIN</a></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Karakter Kunci</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#misa">Misa (Experimen 023)</a></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Kasta Tertinggi</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#the-god">THE GOD (EX-0199)</a></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Nenek Moyang</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#grandma">Para Grandma</a></td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Agama</td>
-                        <td class="wiki-infobox-data"><a class="wiki-link" href="#agama">MalAstreoin</a>, <a class="wiki-link" href="#agama">SilAstrein</a></td>
-                    </tr>
+                    <tr><td class="wiki-infobox-label">Jumlah Bab</td><td class="wiki-infobox-data"><strong>8</strong></td></tr>
+                    <tr><td class="wiki-infobox-label">Karakter Individu</td><td class="wiki-infobox-data">43</td></tr>
+                    <tr><td class="wiki-infobox-label">Total Karakter</td><td class="wiki-infobox-data"><strong>68.618</strong></td></tr>
+                    <tr><td class="wiki-infobox-label">Dalang Utama</td><td class="wiki-infobox-data"><a class="wiki-link" href="#dalang">EX-109 (Long Hand)</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Pembantu Utama</td><td class="wiki-infobox-data"><a class="wiki-link" href="#dalang">SIN</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Karakter Kunci</td><td class="wiki-infobox-data"><a class="wiki-link" href="#misa">Misa (Experimen 023)</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Kasta Tertinggi</td><td class="wiki-infobox-data"><a class="wiki-link" href="#the-god">THE GOD (EX-0199)</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Nenek Moyang</td><td class="wiki-infobox-data"><a class="wiki-link" href="#grandma">Para Grandma</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Agama</td><td class="wiki-infobox-data"><a class="wiki-link" href="#agama">MalAstreoin</a>, <a class="wiki-link" href="#agama">SilAstrein</a></td></tr>
+                    <tr><td class="wiki-infobox-label">Lokasi Utama</td><td class="wiki-infobox-data">PaPer Co (PPc) — Pabrik Pusat</td></tr>
                     <tr><td colspan="2" class="wiki-infobox-subheader">Distribusi Pasukan</td></tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Jacks Group</td>
-                        <td class="wiki-infobox-data">66.711</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Nightmare FU</td>
-                        <td class="wiki-infobox-data">921</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">SMA DU</td>
-                        <td class="wiki-infobox-data">872</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Smileng FU</td>
-                        <td class="wiki-infobox-data">92</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Long FU</td>
-                        <td class="wiki-infobox-data">13</td>
-                    </tr>
-                    <tr>
-                        <td class="wiki-infobox-label">Fuyunnis Brianlin</td>
-                        <td class="wiki-infobox-data">6</td>
-                    </tr>
+                    <tr><td class="wiki-infobox-label">Jacks Group</td><td class="wiki-infobox-data">66.711</td></tr>
+                    <tr><td class="wiki-infobox-label">Nightmare FU</td><td class="wiki-infobox-data">921</td></tr>
+                    <tr><td class="wiki-infobox-label">SMA DU</td><td class="wiki-infobox-data">872</td></tr>
+                    <tr><td class="wiki-infobox-label">Smileng FU</td><td class="wiki-infobox-data">92</td></tr>
+                    <tr><td class="wiki-infobox-label">Long FU</td><td class="wiki-infobox-data">13</td></tr>
+                    <tr><td class="wiki-infobox-label">Fuyunnis Brianlin</td><td class="wiki-infobox-data">6</td></tr>
                 </table>
 
                 <!-- LEAD -->
                 <div class="wiki-lead animate-in delay-2">
-                    <p><strong>Database Karakter GLG Industries</strong> adalah kumpulan seluruh entitas karakter yang muncul dalam semesta fiksi <strong>GLG Industries</strong>, mencakup <strong>Bab 1</strong> hingga <strong>Bab 5</strong>. Database ini mencatat total <strong>68.618 karakter</strong>, terdiri dari 43 karakter individu bernama dan 68.575 anggota grup elit serta pasukan.</p>
-                    <p>Cerita berpusat pada <a class="wiki-link" href="#adre">Adre</a>, satu-satunya <em>manusia murni</em> yang terjebak dalam sebuah <em>loop</em> misterius, bersama <a class="wiki-link" href="#misa">Misa</a> (Experimen 023) sebagai karakter kunci. Seluruh entitas dikendalikan oleh dalang utama <a class="wiki-link" href="#dalang">EX-109 (Long Hand)</a> melalui pembantunya <a class="wiki-link" href="#dalang">SIN</a>, dengan hierarki tertinggi berada pada <a class="wiki-link" href="#the-god">THE GOD (EX-0199)</a>.</p>
+                    <p><strong>Database Karakter GLG Industries</strong> adalah kumpulan seluruh entitas karakter yang muncul dalam semesta fiksi <strong>GLG Industries</strong>, mencakup <strong>Bab 1</strong> hingga <strong>Bab 8</strong>. Database ini mencatat total <strong>68.618 karakter</strong>, terdiri dari 43 karakter individu bernama dan 68.575 anggota grup elit serta pasukan.</p>
+                    <p>Cerita berpusat pada <a class="wiki-link" href="#ch1">Adre</a>, satu-satunya <em>manusia murni</em> yang mengingat masa lalunya dan mencari informasi tentang <strong>PaPer Co (PPc)</strong> — sebuah perusahaan/pabrik yang sudah lama terbengkalai. Perjalanannya membawanya masuk ke dalam PPc, bertemu <a class="wiki-link" href="#misa">Misa</a> (Experimen 023), dan akhirnya menghadapi dalang di balik seluruh loop: <a class="wiki-link" href="#dalang">EX-109 (Long Hand)</a> melalui pembantunya <a class="wiki-link" href="#dalang">SIN</a>.</p>
                 </div>
 
                 <!-- TOC -->
@@ -909,23 +760,17 @@
                         <li><a href="#agama"><span class="toc-number">2</span>Agama dan Kepercayaan</a></li>
                         <li><a href="#karakter-individu"><span class="toc-number">3</span>Karakter Individu</a>
                             <ul class="toc-level-2">
-                                <li><a href="#ch1"><span class="toc-number">3.1</span>Bab 1 — Kelompok Awal</a></li>
-                                <li><a href="#ch2"><span class="toc-number">3.2</span>Bab 2 — Istana & Experimen</a></li>
-                                <li><a href="#ch3"><span class="toc-number">3.3</span>Bab 3 — Boneka & Makhluk</a></li>
-                                <li><a href="#ch4"><span class="toc-number">3.4</span>Bab 4 — Fraksi SIN</a></li>
-                                <li><a href="#ch5"><span class="toc-number">3.5</span>Bab 5 — Para Nenek Moyang</a></li>
+                                <li><a href="#ch1"><span class="toc-number">3.1</span>Bab 1 — Ingatan & PaPer Co</a></li>
+                                <li><a href="#ch2"><span class="toc-number">3.2</span>Bab 2 — Mesin IT & Pintu</a></li>
+                                <li><a href="#ch3"><span class="toc-number">3.3</span>Bab 3 — Dalam Pabrik & Misa</a></li>
+                                <li><a href="#ch4"><span class="toc-number">3.4</span>Bab 4 — Smileng FU & Malian</a></li>
+                                <li><a href="#ch5"><span class="toc-number">3.5</span>Bab 5 — Lore & Kerabat Misa</a></li>
+                                <li><a href="#ch6"><span class="toc-number">3.6</span>Bab 6 — Bertemu Malian</a></li>
+                                <li><a href="#ch7"><span class="toc-number">3.7</span>Bab 7 — Brilioan</a></li>
+                                <li><a href="#ch8"><span class="toc-number">3.8</span>Bab 8 — SIN & Fuyunnis</a></li>
                             </ul>
                         </li>
-                        <li><a href="#grup-elit"><span class="toc-number">4</span>Grup Elit & Pasukan</a>
-                            <ul class="toc-level-2">
-                                <li><a href="#long-fu"><span class="toc-number">4.1</span>Long FU</a></li>
-                                <li><a href="#fuyunnis"><span class="toc-number">4.2</span>Fuyunnis Brianlin</a></li>
-                                <li><a href="#sma-du"><span class="toc-number">4.3</span>SMA DU</a></li>
-                                <li><a href="#nightmare-fu"><span class="toc-number">4.4</span>Nightmare FU</a></li>
-                                <li><a href="#smileng-fu"><span class="toc-number">4.5</span>Smileng FU</a></li>
-                                <li><a href="#jacks-group"><span class="toc-number">4.6</span>Jacks Group</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#grup-elit"><span class="toc-number">4</span>Grup Elit & Pasukan</a></li>
                         <li><a href="#silsilah"><span class="toc-number">5</span>Silsilah & Kasta</a></li>
                         <li><a href="#dalang"><span class="toc-number">6</span>Dalang Utama</a></li>
                         <li><a href="#catatan"><span class="toc-number">7</span>Catatan Kaki</a></li>
@@ -935,7 +780,6 @@
                 <!-- ===== SECTION 1: RINGKASAN ===== -->
                 <div class="wiki-section animate-in delay-3" id="ringkasan">
                     <h2 class="wiki-section-header">1. Ringkasan Data Vital <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-
                     <table class="wiki-table">
                         <tr><th>Kategori</th><th>Jumlah</th><th>Keterangan</th></tr>
                         <tr><td>Karakter Individu</td><td><strong>43</strong></td><td>Karakter bernama dengan deskripsi rinci</td></tr>
@@ -945,52 +789,19 @@
                         <tr><td>Pembantu Utama</td><td>SIN</td><td>Tangan kanan EX-109</td></tr>
                         <tr><td>Karakter Kunci</td><td>Misa (Experimen 023)</td><td>Protagonis utama non-manusia</td></tr>
                         <tr><td>Kasta Tertinggi</td><td>THE GOD (EX-0199)</td><td>Entitas paling kuat</td></tr>
+                        <tr><td>Figur Deus ex Machina</td><td>Malian</td><td>Penganut MalAstreoin; penghenti Smileng FU</td></tr>
                         <tr><td>Nenek Moyang</td><td>Para Grandma</td><td>Akar silsilah seluruh faksi</td></tr>
+                        <tr><td>Lokasi Sentral</td><td>PaPer Co (PPc)</td><td>Pabrik pusat yang terbengkalai</td></tr>
                     </table>
 
                     <h3 class="wiki-subsection-header">Distribusi Pasukan (Visual)</h3>
                     <div class="stats-bar-container">
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">Jacks Group</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:97.2%; background:#3b82f6;">66.711</div>
-                            </div>
-                        </div>
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">Nightmare FU</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:1.34%; background:#dc2626;">921</div>
-                            </div>
-                        </div>
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">SMA DU</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:1.27%; background:#8b5cf6;">872</div>
-                            </div>
-                        </div>
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">Smileng FU</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:0.14%; background:#10b981; min-width:36px;">92</div>
-                            </div>
-                        </div>
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">Long FU</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:0.03%; background:#f59e0b; min-width:36px;">13</div>
-                            </div>
-                        </div>
-                        <div class="stats-bar-row">
-                            <span class="stats-bar-label">Fuyunnis Brianlin</span>
-                            <div class="stats-bar-track">
-                                <div class="stats-bar-fill" style="width:0.02%; background:#ec4899; min-width:36px;">6</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wiki-notice wiki-notice-yellow">
-                        <span class="iconify" data-icon="lucide:triangle-alert"></span>
-                        <div><strong>Catatan:</strong> Jacks Group mendominasi 97,2% dari total populasi pasukan, menjadikannya infrastruktur utama pabrik dan pasukan tempur massal.</div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">Jacks Group</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:97.2%; background:#3b82f6;">66.711</div></div></div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">Nightmare FU</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:1.34%; background:#dc2626;">921</div></div></div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">SMA DU</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:1.27%; background:#8b5cf6;">872</div></div></div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">Smileng FU</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:0.14%; background:#10b981; min-width:36px;">92</div></div></div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">Long FU</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:0.03%; background:#f59e0b; min-width:36px;">13</div></div></div>
+                        <div class="stats-bar-row"><span class="stats-bar-label">Fuyunnis Brianlin</span><div class="stats-bar-track"><div class="stats-bar-fill" style="width:0.02%; background:#ec4899; min-width:36px;">6</div></div></div>
                     </div>
                 </div>
 
@@ -999,26 +810,28 @@
                 <!-- ===== SECTION 2: AGAMA ===== -->
                 <div class="wiki-section" id="agama">
                     <h2 class="wiki-section-header">2. Agama dan Kepercayaan <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-                    <p>Dalam semesta GLG Industries, terdapat dua sistem kepercayaan utama yang mempengaruhi faksi, motivasi, dan tindakan seluruh karakter.</p>
-
+                    <p>Dalam semesta GLG Industries, terdapat dua sistem kepercayaan utama yang berperan penting dalam alur cerita, khususnya pada Bab 4 dan Bab 8.</p>
                     <div class="religion-box">
                         <div class="religion-icon" style="background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fbbf24;">
                             <span class="iconify" data-icon="lucide:moon"></span>
                         </div>
                         <div>
                             <h4>MalAstreoin — Agama Malian</h4>
-                            <p>Agama yang berkaitan dengan <strong>Mali</strong> sebagai figur sentral. Dipraktikkan oleh sebagian faksi dan karakter tertentu. Detail doktrin masih dalam pengembangan.</p>
+                            <p>Agama yang berkaitan dengan <strong>Mali</strong> sebagai figur sentral. Dianut oleh <strong>Malian</strong> — sosok misterius yang muncul di Bab 4 untuk menghentikan Smileng FU dengan membakar mereka semua. Kekuatan api Malian kemungkinan besar terkait dengan doktrin agama ini.</p>
                         </div>
                     </div>
-
                     <div class="religion-box">
                         <div class="religion-icon" style="background: linear-gradient(135deg, #2d1b4e, #4a1d8e); color: #c084fc;">
                             <span class="iconify" data-icon="lucide:eye"></span>
                         </div>
                         <div>
                             <h4>SilAstrein — Agama SIN</h4>
-                            <p>Agama yang dipimpin oleh <strong>SIN</strong> sebagai figur utama. Dianut secara fanatik oleh faksi-faksi yang setia kepada dalang utama, termasuk <strong>Brilioan</strong> (Wakil SIN) dan para pengikut Jacks Group.</p>
+                            <p>Agama yang dipimpin oleh <strong>SIN</strong> sebagai figur utama. Dianut secara fanatik oleh faksi-faksi yang setia kepada dalang utama, termasuk <strong>Brilioan</strong> (Wakil SIN). SIN sendiri adalah boss final di Bab 8 yang harus dilawan oleh Adre dan Misa.</p>
                         </div>
+                    </div>
+                    <div class="wiki-notice wiki-notice-orange">
+                        <span class="iconify" data-icon="lucide:swords"></span>
+                        <div><strong>Konflik Agama:</strong> Pertemuan antara Malian (MalAstreoin) dan SIN (SilAstrein) di Bab 8 menjadi klimaks ideologis cerita, meskipun Fuyunnis Brianlin yang menghadang Malian — membiarkan Adre dan Misa lolos ke permukaan.</div>
                     </div>
                 </div>
 
@@ -1027,91 +840,63 @@
                 <!-- ===== SECTION 3: KARAKTER INDIVIDU ===== -->
                 <div class="wiki-section" id="karakter-individu">
                     <h2 class="wiki-section-header">3. Karakter Individu <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-                    <p>Terdapat <strong>43 karakter individu</strong> yang tersebar di 5 bab. Masing-masing memiliki peran, visual, dan latar belakang yang unik dalam struktur loop GLG Industries.</p>
+                    <p>Terdapat <strong>43 karakter individu</strong> yang tersebar di 8 bab. Setiap bab memiliki narasi dan fokus karakter yang berbeda.</p>
 
-                    <!-- CH1 TABS -->
+                    <!-- ============ CH1 ============ -->
                     <div id="ch1">
-                        <h3 class="wiki-subsection-header">3.1 Bab 1 — Kelompok Awal <a class="wiki-edit-link" href="#">[sunting]</a></h3>
-                        <p>Bab pertama memperkenalkan 10 karakter inti, termasuk satu-satunya manusia murni dan sekutunya dari dunia papercraft.</p>
+                        <h3 class="wiki-subsection-header">3.1 Bab 1 — Ingatan & PaPer Co <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #1e3a5f, #2d5a8e); color: #fff;">
+                                <div class="ch-narrative-num" style="background: #0f2844;">1</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Adre mengingat masa lalunya. Dia mulai mencari informasi tentang <strong>PaPer Co (PPc)</strong>, sebuah entitas/perusahaan yang sudah lama terbengkalai. Bab ini memperkenalkan tempat tinggal Adre dan karakter-karakter di sekitarnya.</p>
+                                <p><strong>Tujuan bab ini adalah membangun kualitas game</strong> — menunjukkan grafik, atmosfer, dan detail dunia agar pemain menyadari bahwa game ini serius dan tidak main-main. Ini adalah "hook" yang membuat orang mau melanjutkan ke Bab 2.</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Tempat tinggal Adre • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Karakter diperkenalkan: 10
+                            </div>
+                        </div>
 
                         <div class="char-grid">
-                            <!-- ADRE -->
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1e3a5f, #2d5a8e);">
-                                        <span class="iconify" data-icon="lucide:user"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1e3a5f, #2d5a8e);"><span class="iconify" data-icon="lucide:user"></span></div>
                                     Adre
                                 </div>
                                 <div class="char-card-body">
                                     <strong style="color:var(--wiki-text);">The Human / Fix</strong><br>
-                                    Satu-satunya manusia murni yang terjebak di loop. Pakaian era 1897 (vest, kemeja putih lusuh, celana bahan tebal). Jadi patokan "ukuran" buat karakter lain.
+                                    Satu-satunya manusia murni. Pakaian era 1897 (vest, kemeja putih lusuh, celana bahan tebal). Patokan "ukuran" buat karakter lain. Di bab ini, ingatan masa lalunya mulai kembali.
                                     <br><span class="char-card-tag tag-protagonis">Protagonis</span>
                                 </div>
                             </div>
-                            <!-- MISA -->
-                            <div class="char-card" id="misa">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #dc2626, #f87171);">
-                                        <span class="iconify" data-icon="lucide:graduation-cap"></span>
-                                    </div>
-                                    Misa
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Tiny Schoolgirl</strong><br>
-                                    Tinggi se-lutut Adre. Baju sailor fuku klasik, rambut hitam panjang diurai. Umur 25 tahun tapi terjebak di tubuh mungil. Suara VA dewasa dari karakter mungil.
-                                    <br><span class="char-card-tag tag-protagonis">Protagonis</span>
-                                    <span class="char-card-tag tag-mysterius">Experimen 023</span>
-                                </div>
-                            </div>
-                            <!-- MIYA -->
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
-                                        <span class="iconify" data-icon="lucide:chef-hat"></span>
-                                    </div>
-                                    Miya
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Tiny Chef</strong><br>
-                                    Setinggi lutut Adre. Baju koki lengkap dengan topi tinggi. Celemek/topi ada tekstur lipatan kertas yang kaku (tema Papercraft).
-                                    <br><span class="char-card-tag tag-ally">Sekutu</span>
-                                </div>
-                            </div>
-                            <!-- KKS & LOID -->
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #6b7280, #9ca3af);">
-                                        <span class="iconify" data-icon="lucide:users"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #6b7280, #9ca3af);"><span class="iconify" data-icon="lucide:users"></span></div>
                                     Kks & Loid
                                 </div>
                                 <div class="char-card-body">
                                     <strong style="color:var(--wiki-text);">Duo Pelayan</strong><br>
-                                    Duo kembar setinggi lutut yang pakai baju pelayan (Butler/Maid) dari kertas.
+                                    Duo kembar setinggi lutut, baju pelayan (Butler/Maid) dari kertas. Mungkin muncul di sekitar tempat tinggal Adre.
                                     <br><span class="char-card-tag tag-netral">Pendukung</span>
                                 </div>
                             </div>
-                            <!-- POS -->
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">
-                                        <span class="iconify" data-icon="lucide:mail"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);"><span class="iconify" data-icon="lucide:mail"></span></div>
                                     Pos
                                 </div>
                                 <div class="char-card-body">
                                     <strong style="color:var(--wiki-text);">The Postman</strong><br>
-                                    Karakter pembawa pesan. Tasnya penuh sama surat-surat.
+                                    Pembawa pesan. Tasnya penuh surat-surat. Mungkin membawa informasi awal tentang PPc.
                                     <br><span class="char-card-tag tag-netral">Pendukung</span>
                                 </div>
                             </div>
-                            <!-- MUSHO -->
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #d4a574, #e8c9a0);">
-                                        <span class="iconify" data-icon="lucide:bandage"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #d4a574, #e8c9a0);"><span class="iconify" data-icon="lucide:bandage"></span></div>
                                     Musho
                                 </div>
                                 <div class="char-card-body">
@@ -1120,463 +905,467 @@
                                     <br><span class="char-card-tag tag-mysterius">Misterius</span>
                                 </div>
                             </div>
-                            <!-- BRIAM, LIAN, LUDWI -->
+                        </div>
+
+                        <div class="wiki-notice wiki-notice-green">
+                            <span class="iconify" data-icon="lucide:monitor"></span>
+                            <div><strong>Catatan Desain:</strong> Bab 1 berfungsi sebagai <em>tech demo</em> naratif. Kualitas grafik, pencahayaan, dan detail lingkungan tempat tinggal Adre sengaja dibuat impresif untuk membuktikan keseriusan game kepada pemain.</div>
+                        </div>
+                    </div>
+
+                    <hr class="wiki-hr">
+
+                    <!-- ============ CH2 ============ -->
+                    <div id="ch2">
+                        <h3 class="wiki-subsection-header">3.2 Bab 2 — Mesin IT & Pintu <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #4338ca, #6366f1); color: #fff;">
+                                <div class="ch-narrative-num" style="background: #312e81;">2</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Adre telah menemukan informasi lebih lanjut tentang <strong>PaPer Co (PPc)</strong> yang sudah lama terbengkalai. Dari informasi tersebut, dia berhasil membuat sebuah <strong>Mesin IT</strong> (<em>Init Teknologi</em>) — perangkat yang menjadi kunci untuk membuka akses ke PPc.</p>
+                                <p>Di akhir cerita bab ini, Adre berdiri di depan <strong>pabrik PPc pusat</strong> — pintu masuk ke dunia loop yang sesungguhnya. Bab ini berfungsi sebagai transisi dari "dunia normal" ke "dunia PPc".</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Workshop Adre → Depan Pabrik PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Karakter diperkenalkan: 4
+                            </div>
+                        </div>
+
+                        <div class="char-grid">
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1f2937, #374151);">
-                                        <span class="iconify" data-icon="lucide:ghost"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1e3a5f, #2d5a8e);"><span class="iconify" data-icon="lucide:user"></span></div>
+                                    Adre
+                                </div>
+                                <div class="char-card-body">
+                                    Kembali sebagai fokus. Bab ini menunjukkan sisi teknis/intelektual Adre — dia mampu membuat Mesin IT dari informasi terbatas tentang PPc.
+                                    <br><span class="char-card-tag tag-protagonis">Protagonis</span>
+                                </div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"><span class="iconify" data-icon="lucide:chef-hat"></span></div>
+                                    Miya
+                                </div>
+                                <div class="char-card-body">
+                                    <strong style="color:var(--wiki-text);">The Tiny Chef</strong><br>
+                                    Setinggi lutut Adre. Baju koki lengkap dengan topi tinggi. Mungkin muncul sebagai karakter pendukung di sekitar area workshop.
+                                    <br><span class="char-card-tag tag-ally">Sekutu</span>
+                                </div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1f2937, #374151);"><span class="iconify" data-icon="lucide:ghost"></span></div>
                                     Briam, Lian, Ludwi
                                 </div>
                                 <div class="char-card-body">
                                     <strong style="color:var(--wiki-text);">Trio Elit No-Face</strong><br>
-                                    Trio elit pakai jas formal tapi wajahnya datar kayak topeng kertas (No-Face). Anggota Smileng FU.
+                                    Trio elit jas formal, wajah datar kayak topeng kertas. Mungkin pertama kali terlihat mengawasi Adre dari kejauhan.
                                     <br><span class="char-card-tag tag-elite">Smileng FU</span>
                                 </div>
                             </div>
                         </div>
 
-                        <table class="wiki-table wiki-table-wide">
-                            <tr><th>#</th><th>Nama</th><th>Peran</th><th>Grup</th><th>Tinggi (relatif)</th></tr>
-                            <tr><td>1</td><td>Adre</td><td>Protagonis Utama</td><td>—</td><td>Patokan (100%)</td></tr>
-                            <tr><td>2</td><td>Misa</td><td>Karakter Kunci</td><td>Smileng FU</td><td>~Lutut Adre</td></tr>
-                            <tr><td>3</td><td>Miya</td><td>Chef</td><td>Jacks Group</td><td>~Lutut Adre</td></tr>
-                            <tr><td>4</td><td>Kks</td><td>Pelayan</td><td>Jacks Group</td><td>~Lutut Adre</td></tr>
-                            <tr><td>5</td><td>Loid</td><td>Pelayan</td><td>Jacks Group</td><td>~Lutut Adre</td></tr>
-                            <tr><td>6</td><td>Pos</td><td>Kurir</td><td>Jacks Group</td><td>—</td></tr>
-                            <tr><td>7</td><td>Musho</td><td>Mumi Kecil</td><td>Jacks Group</td><td>—</td></tr>
-                            <tr><td>8</td><td>Briam</td><td>Elit No-Face</td><td>Smileng FU</td><td>—</td></tr>
-                            <tr><td>9</td><td>Lian</td><td>Elit No-Face</td><td>Smileng FU</td><td>—</td></tr>
-                            <tr><td>10</td><td>Ludwi</td><td>Elit No-Face</td><td>Smileng FU</td><td>—</td></tr>
-                        </table>
+                        <div class="wiki-notice wiki-notice-yellow">
+                            <span class="iconify" data-icon="lucide:wrench"></span>
+                            <div><strong>Mesin IT (Init Teknologi):</strong> Perangkat buatan Adre yang menjadi jembatan antara dunia luar dan dunia PPc. Detail mekanisme masih misterius, namun ini membuktikan bahwa Adre bukan manusia biasa — dia memiliki kecerdasan teknis yang luar biasa.</div>
+                        </div>
                     </div>
 
                     <hr class="wiki-hr">
 
-                    <!-- CH2 -->
-                    <div id="ch2">
-                        <h3 class="wiki-subsection-header">3.2 Bab 2 — Istana & Experimen <a class="wiki-edit-link" href="#">[sunting]</a></h3>
-                        <p>Bab kedua memperkenalkan 16 karakter, termasuk Keluarga Bangsawan Yos, staf istana, dan sejumlah unit Experimen (EX).</p>
+                    <!-- ============ CH3 ============ -->
+                    <div id="ch3">
+                        <h3 class="wiki-subsection-header">3.3 Bab 3 — Dalam Pabrik & Misa <a class="wiki-edit-link" href="#">[sunting]</a></h3>
 
-                        <h4 class="wiki-subsection-header3">Keluarga Bangsawan Yos</h4>
-                        <div class="char-grid">
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
-                                        <span class="iconify" data-icon="lucide:crown"></span>
-                                    </div>
-                                    Mommy Yos
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Manipulative Matriarch</strong><br>
-                                    Setinggi dada Adre. Elegan, topi lebar ala bangsawan Eropa, mata belo yang manipulatif. "Kebaikan" di wajahnya jebakan paling ngeri.
-                                    <br><span class="char-card-tag tag-antagonis">Antagonis</span>
-                                    <span class="char-card-tag tag-elite">SMA DU</span>
-                                </div>
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #dc2626, #f87171); color: #fff;">
+                                <div class="ch-narrative-num" style="background: #991b1b;">3</div>
+                                Ringkasan Cerita
                             </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #4c1d95, #6d28d9);">
-                                        <span class="iconify" data-icon="lucide:shield"></span>
-                                    </div>
-                                    Daddy Yos
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Authoritarian Patriarch</strong><br>
-                                    Setinggi leher Adre. Tatapan sinis, aura otoriter. Tipe yang nggak butuh tangan kotor buat nyingkirin Adre.
-                                    <br><span class="char-card-tag tag-antagonis">Antagonis</span>
-                                    <span class="char-card-tag tag-elite">SMA DU</span>
-                                </div>
+                            <div class="ch-narrative-body">
+                                <p>Adre resmi memasuki <strong>PPc pusat</strong>. Di dalamnya, dia mengerjakan berbagai <strong>puzzle dan tugas</strong> yang tersebar di area pabrik. Selama eksplorasi, Adre menemukan <strong>surat-surat</strong> lama yang memberikan petunjuk tentang sejarah PPc dan eksperimen yang dilakukan di dalamnya.</p>
+                                <p>Di akhir bab, Adre akhirnya <strong>bertemu dengan Misa</strong> — karakter kunci yang mengubah seluruh dinamika cerita. Pertemuan ini menandai transisi dari "solo exploration" menjadi "duo journey".</p>
                             </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #c084fc, #e9d5ff);">
-                                        <span class="iconify" data-icon="lucide:umbrella"></span>
-                                    </div>
-                                    Yos's Sister
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">Mini-Me Manipulator</strong><br>
-                                    Setinggi paha Adre. Mini-me dari Mommy. Payung istananya bisa jadi senjata atau alat buat "menghilang".
-                                    <br><span class="char-card-tag tag-antagonis">Antagonis</span>
-                                    <span class="char-card-tag tag-elite">SMA DU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #34d399, #6ee7b7);">
-                                        <span class="iconify" data-icon="lucide:baby"></span>
-                                    </div>
-                                    Child Yos
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Hero Ally</strong><br>
-                                    Si bungsu yang friendly. Di tengah keluarga kejam, dia jadi pemandu/teman Adre. Plot point emosional.
-                                    <br><span class="char-card-tag tag-ally">Ally</span>
-                                    <span class="char-card-tag tag-elite">SMA DU</span>
-                                </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Dalam Pabrik PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Karakter diperkenalkan: 5
                             </div>
                         </div>
 
-                        <h4 class="wiki-subsection-header3">Staf Istana & Antagonis</h4>
                         <div class="char-grid">
+                            <div class="char-card" id="misa">
+                                <div class="char-card-header">
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #dc2626, #f87171);"><span class="iconify" data-icon="lucide:graduation-cap"></span></div>
+                                    Misa
+                                </div>
+                                <div class="char-card-body">
+                                    <strong style="color:var(--wiki-text);">The Tiny Schoolgirl</strong><br>
+                                    Tinggi se-lutut Adre. Sailor fuku klasik, rambut hitam panjang. Umur 25 tahun di tubuh mungil. <strong>Pertama kali muncul di akhir Bab 3.</strong>
+                                    <br><span class="char-card-tag tag-protagonis">Protagonis</span>
+                                    <span class="char-card-tag tag-mysterius">Experimen 023</span>
+                                </div>
+                            </div>
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f59e0b, #fcd34d);">
-                                        <span class="iconify" data-icon="lucide:cooking-pot"></span>
-                                    </div>
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f59e0b, #fcd34d);"><span class="iconify" data-icon="lucide:cooking-pot"></span></div>
                                     Kit Kitchien
                                 </div>
                                 <div class="char-card-body">
                                     <strong style="color:var(--wiki-text);">KKH — Chef Istana</strong><br>
-                                    Rekan Miya di dapur istana. Dapur semuanya dari kertas mahal, mengkilap tapi tajam.
+                                    Rekan Miya di dapur pabrik. Dapur semuanya dari kertas mahal, mengkilap tapi tajam. Mungkin ditemui saat Adre menyelesaikan puzzle dapur.
                                     <br><span class="char-card-tag tag-netral">Jacks Group</span>
                                 </div>
                             </div>
                             <div class="char-card">
                                 <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
-                                        <span class="iconify" data-icon="lucide:moon-star"></span>
-                                    </div>
-                                    Bedrooo
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #78716c, #a8a29e);"><span class="iconify" data-icon="lucide:scroll"></span></div>
+                                    EX-000, EX-001, EX-009, EX-621
                                 </div>
                                 <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Slow Talker</strong><br>
-                                    Baju tidur bintang-bintang. Ngomongnya lama ("O"-nya ada tiga!). Tipe yang bikin pemain gemes.
-                                    <br><span class="char-card-tag tag-netral">Jacks Group</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #78716c, #a8a29e);">
-                                        <span class="iconify" data-icon="lucide:scroll"></span>
-                                    </div>
-                                    Waste
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Unroller</strong><br>
-                                    Kertas gulung panjang yang bisa ngiket. Horor — kayak mumi versi unroll.
-                                    <br><span class="char-card-tag tag-antagonis">Nightmare FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f472b6, #fbcfe8);">
-                                        <span class="iconify" data-icon="lucide:flower-2"></span>
-                                    </div>
-                                    Lily
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Flower Girl</strong><br>
-                                    Si cantik berbunga. Kontras banget sama kengerian sekitarnya.
-                                    <br><span class="char-card-tag tag-netral">Jacks Group</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #06b6d4, #67e8f9);">
-                                        <span class="iconify" data-icon="lucide:snowflake"></span>
-                                    </div>
-                                    Frezze
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Plastic One</strong><br>
-                                    Material plastik (bukan kertas). Tekstur beda banget sama yang lain. Menandakan dia "mati" atau diubah paksa.
-                                    <br><span class="char-card-tag tag-mysterius">Tragic Duo</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #a3e635, #d9f99d);">
-                                        <span class="iconify" data-icon="lucide:leaf"></span>
-                                    </div>
-                                    Chi
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Paper One</strong><br>
-                                    Pasangan Frezze. Perbedaan material (Plastik vs Kertas) nunjukin transformasi paksa.
-                                    <br><span class="char-card-tag tag-mysterius">Tragic Duo</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f97316, #fb923c);">
-                                        <span class="iconify" data-icon="lucide:shapes"></span>
-                                    </div>
-                                    Pipz & Protey
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Shape-shifters</strong><br>
-                                    Bisa berubah jadi apa aja dari potongan kertas. Adre nggak bakal pernah ngerasa aman.
-                                    <br><span class="char-card-tag tag-antagonis">Nightmare FU</span>
+                                    <strong style="color:var(--wiki-text);">Unit Experimen</strong><br>
+                                    Hasil eksperimen PPc yang ditemui Adre saat menjelajahi area lab/pabrik. Surat-surat yang ditemukan mungkin merujuk pada mereka.
+                                    <br><span class="char-card-tag tag-mysterius">Jacks Group</span>
                                 </div>
                             </div>
                         </div>
-
-                        <h4 class="wiki-subsection-header3">Unit Experimen (EX)</h4>
-                        <div class="wiki-notice wiki-notice-red">
-                            <span class="iconify" data-icon="lucide:alert-triangle"></span>
-                            <div>Semua unit EX adalah hasil eksperimen dalam loop GLG Industries. Nomor menunjukkan urutan pembuatan atau tingkat kekuatan.</div>
-                        </div>
-                        <table class="wiki-table wiki-table-wide">
-                            <tr><th>Kode</th><th>Perkiraan Peran</th><th>Grup</th></tr>
-                            <tr><td>EX-000</td><td>Prototipe pertama</td><td>Jacks Group</td></tr>
-                            <tr><td>EX-001</td><td>Unit awal</td><td>Jacks Group</td></tr>
-                            <tr><td>EX-009</td><td>Unit eksperimen</td><td>Jacks Group</td></tr>
-                            <tr><td>EX-621</td><td>Unit eksperimen</td><td>Jacks Group</td></tr>
-                        </table>
                     </div>
 
                     <hr class="wiki-hr">
 
-                    <!-- CH3 -->
-                    <div id="ch3">
-                        <h3 class="wiki-subsection-header">3.3 Bab 3 — Boneka & Makhluk <a class="wiki-edit-link" href="#">[sunting]</a></h3>
-                        <p>Bab ketiga memperkenalkan 14 karakter dengan tema boneka, mainan, dan makhluk supernatural.</p>
+                    <!-- ============ CH4 ============ -->
+                    <div id="ch4">
+                        <h3 class="wiki-subsection-header">3.4 Bab 4 — Smileng FU & Malian <a class="wiki-edit-link" href="#">[sunting]</a></h3>
 
-                        <h4 class="wiki-subsection-header3">The Babies (Horor Boneka)</h4>
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #10b981, #059669); color: #fff;">
+                                <div class="ch-narrative-num" style="background: #065f46;">4</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Misa dan Adre semakin dalam menjelajahi PPc. Namun, mereka dikejar oleh <strong>Smileng FU</strong> — pasukan berjumlah 92 karakter yang sangat banyak dan terus menyerang tanpa henti. Situasi menjadi putus asa.</p>
+                                <p>Tiba-tiba, <strong>Malian</strong> muncul. Dengan kekuatan yang misterius, Malian <strong>menghentikan semua Smileng FU</strong> dan <strong>membakar mereka semua</strong> menjadi abu. Bab ini adalah pertama kalinya kekuatan supernatural level tinggi ditampilkan — dan Malian menjadi figur <em>deus ex machina</em> yang menandai eskalasi cerita.</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Area dalam PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Karakter diperkenalkan: 2 • <span class="iconify" data-icon="lucide:flame" style="margin-left:8px; color:#f97316;"></span> Event kunci: Pembakaran Smileng FU
+                            </div>
+                        </div>
+
+                        <div class="char-grid">
+                            <div class="char-card" style="border-left: 4px solid #f97316;">
+                                <div class="char-card-header">
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #0c0a09, #f97316);"><span class="iconify" data-icon="lucide:flame"></span></div>
+                                    Malian
+                                </div>
+                                <div class="char-card-body">
+                                    <strong style="color:var(--wiki-text);">Deus ex Machina</strong><br>
+                                    Sosok misterius yang muncul di saat kritis. Menghentikan dan membakar seluruh Smileng FU (92 karakter) sekaligus. Penganut <strong>MalAstreoin</strong>. Kekuatannya berbeda level dari karakter lain.
+                                    <br><span class="char-card-tag tag-deus">Deus ex Machina</span>
+                                    <span class="char-card-tag tag-mysterius">MalAstreoin</span>
+                                </div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #10b981, #059669);"><span class="iconify" data-icon="lucide:users"></span></div>
+                                    Smileng FU (Grup)
+                                </div>
+                                <div class="char-card-body">
+                                    <strong style="color:var(--wiki-text);">Pasukan Pengkejar</strong><br>
+                                    92 karakter yang mengejar Adre dan Misa. Dihentikan dan dibakar seluruhnya oleh Malian. Anggota bernama: MISA, Briam, Lian, Ludwi.
+                                    <br><span class="char-card-tag tag-antagonis">92 Karakter</span>
+                                    <span class="char-card-tag tag-boss">Dihancurkan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wiki-notice wiki-notice-red">
+                            <span class="iconify" data-icon="lucide:flame"></span>
+                            <div><strong>Event Penting:</strong> Pembakaran seluruh Smileng FU oleh Malian adalah momen paling menentukan di paruh pertama cerita. Ini membuktikan bahwa kekuatan di dalam PPc tidak hanya sebatas "kertas" — ada sesuatu yang jauh lebih besar.</div>
+                        </div>
+                    </div>
+
+                    <hr class="wiki-hr">
+
+                    <!-- ============ CH5 ============ -->
+                    <div id="ch5">
+                        <h3 class="wiki-subsection-header">3.5 Bab 5 — Lore & Kerabat Misa <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); color: #fff;">
+                                <div class="ch-narrative-num" style="background: #4c1d95;">5</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Bab ini memperdalam <strong>lore</strong> dunia PPc. Adre dan Misa bertemu dengan <strong>kerabat-kerabat Misa</strong> — termasuk Triple M (Miza, Mis) dan karakter-karakter dari area bangsawan. Bab ini juga memperkenalkan <strong>protagonis lainnya</strong> yang mungkin menjadi sekutu di perjalanan selanjutnya.</p>
+                                <p>Politik internal PPc mulai terungkap: Keluarga Bangsawan Yos, staf istana, boneka-boneka hidup, dan berbagai eksperimen yang tersembunyi.</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Area bangsawan & lore PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Karakter diperkenalkan: 16
+                            </div>
+                        </div>
+
+                        <h4 class="wiki-subsection-header3">Keluarga Bangsawan Yos</h4>
                         <div class="char-grid">
                             <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #ec4899, #f9a8d4);">
-                                        <span class="iconify" data-icon="lucide:baby"></span>
-                                    </div>
-                                    Baby
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">Statis tapi Ngeri</strong><br>
-                                    Boneka plastik yang nggak bisa gerak, cuma matanya yang selalu ngikutin Adre.
-                                    <br><span class="char-card-tag tag-antagonis">Horor</span>
-                                </div>
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);"><span class="iconify" data-icon="lucide:crown"></span></div>Mommy Yos</div>
+                                <div class="char-card-body"><strong style="color:var(--wiki-text);">The Manipulative Matriarch</strong><br>Setinggi dada Adre. Topi lebar ala bangsawan Eropa, mata belo manipulatif.<br><span class="char-card-tag tag-antagonis">Antagonis</span><span class="char-card-tag tag-elite">SMA DU</span></div>
                             </div>
                             <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #be185d, #ec4899);">
-                                        <span class="iconify" data-icon="lucide:shirt"></span>
-                                    </div>
-                                    Baby Doll
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">Boneka Kain Hidup</strong><br>
-                                    Boneka dari kain yang bisa gerak bebas.
-                                    <br><span class="char-card-tag tag-antagonis">Horor</span>
-                                </div>
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #4c1d95, #6d28d9);"><span class="iconify" data-icon="lucide:shield"></span></div>Daddy Yos</div>
+                                <div class="char-card-body"><strong style="color:var(--wiki-text);">The Authoritarian Patriarch</strong><br>Setinggi leher Adre. Tatapan sinis, aura otoriter.<br><span class="char-card-tag tag-antagonis">Antagonis</span><span class="char-card-tag tag-elite">SMA DU</span></div>
                             </div>
                             <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #f5f5f4, #d6d3d1);">
-                                        <span class="iconify" data-icon="lucide:broken-image"></span>
-                                    </div>
-                                    Doll Kras
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">Weeping Angel</strong><br>
-                                    Boneka porselen patah-patah. Mekanisme Weeping Angel: nggak gerak kalau diliat, gerak pas lo lengah.
-                                    <br><span class="char-card-tag tag-antagonis">Horor</span>
-                                </div>
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #c084fc, #e9d5ff);"><span class="iconify" data-icon="lucide:umbrella"></span></div>Yos's Sister</div>
+                                <div class="char-card-body">Mini-me dari Mommy. Payung istana bisa jadi senjata.<br><span class="char-card-tag tag-antagonis">Antagonis</span><span class="char-card-tag tag-elite">SMA DU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #34d399, #6ee7b7);"><span class="iconify" data-icon="lucide:baby"></span></div>Child Yos</div>
+                                <div class="char-card-body"><strong style="color:var(--wiki-text);">The Hero Ally</strong><br>Si bungsu yang friendly. Plot point emosional.<br><span class="char-card-tag tag-ally">Ally</span><span class="char-card-tag tag-elite">SMA DU</span></div>
                             </div>
                         </div>
 
-                        <h4 class="wiki-subsection-header3">The Triple M (Saudara Misa)</h4>
-                        <div class="wiki-notice wiki-notice-purple">
-                            <span class="iconify" data-icon="lucide:git-branch"></span>
-                            <div><strong>Triple M</strong> adalah tiga bersaudara perempuan dari garis keturunan yang sama dengan Misa. Baju dan tinggi Mis sama kayak Misa (setinggi lutut Adre).</div>
+                        <h4 class="wiki-subsection-header3">Staf Istana & Karakter Lainnya</h4>
+                        <div class="char-grid">
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #6366f1, #818cf8);"><span class="iconify" data-icon="lucide:moon-star"></span></div>Bedrooo</div>
+                                <div class="char-card-body">Baju tidur bintang-bintang. Ngomongnya lama ("O"-nya ada tiga!).<br><span class="char-card-tag tag-netral">Jacks Group</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #78716c, #a8a29e);"><span class="iconify" data-icon="lucide:scroll"></span></div>Waste</div>
+                                <div class="char-card-body">Kertas gulung panjang yang bisa ngiket. Horor.<br><span class="char-card-tag tag-antagonis">Nightmare FU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #f472b6, #fbcfe8);"><span class="iconify" data-icon="lucide:flower-2"></span></div>Lily</div>
+                                <div class="char-card-body">Si cantik berbunga. Kontras sama kengerian sekitarnya.<br><span class="char-card-tag tag-netral">Jacks Group</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #06b6d4, #67e8f9);"><span class="iconify" data-icon="lucide:snowflake"></span></div>Frezze & Chi</div>
+                                <div class="char-card-body">Tragic Duo — Plastik vs Kertas. Transformasi paksa.<br><span class="char-card-tag tag-mysterius">Tragic Duo</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #f97316, #fb923c);"><span class="iconify" data-icon="lucide:shapes"></span></div>Pipz & Protey</div>
+                                <div class="char-card-body">Shape-shifters dari potongan kertas.<br><span class="char-card-tag tag-antagonis">Nightmare FU</span></div>
+                            </div>
                         </div>
+
+                        <h4 class="wiki-subsection-header3">The Triple M & Boneka</h4>
                         <table class="wiki-table wiki-table-wide">
                             <tr><th>Nama</th><th>Posisi</th><th>Grup</th><th>Keterangan</th></tr>
-                            <tr><td><strong>Miza</strong></td><td>Kakak Paling Tua</td><td>Nightmare FU</td><td>Antagonis utama dari triplet</td></tr>
+                            <tr><td><strong>Miza</strong></td><td>Kakak Paling Tua</td><td>Nightmare FU</td><td>Antagonis dari triplet</td></tr>
                             <tr><td><strong>Mis</strong></td><td>Kakak Tengah</td><td>Nightmare FU</td><td>Sailor fuku, setinggi lutut Adre</td></tr>
-                            <tr><td><strong>Misa</strong></td><td>Si Bungsu</td><td>Smileng FU</td><td>Experimen 023, Karakter Kunci</td></tr>
+                            <tr><td><strong>Misa</strong></td><td>Si Bungsu</td><td>Smileng FU</td><td>Experimen 023</td></tr>
+                            <tr><td><strong>Baby</strong></td><td>—</td><td>Jacks Group</td><td>Boneka plastik statis, mata ngikutin Adre</td></tr>
+                            <tr><td><strong>Baby Doll</strong></td><td>—</td><td>Jacks Group</td><td>Boneka kain yang bisa gerak bebas</td></tr>
+                            <tr><td><strong>Doll Kras</strong></td><td>—</td><td>Jacks Group</td><td>Weeping Angel — porselen patah</td></tr>
+                            <tr><td><strong>Saly</strong></td><td>—</td><td>Jacks Group</td><td>Mainan "Garam" dari plastik</td></tr>
+                            <tr><td><strong>Braids</strong></td><td>—</td><td>Nightmare FU</td><td>Boneka terkutuk Jepang</td></tr>
+                            <tr><td><strong>Purpel, Sian, Mian</strong></td><td>—</td><td>Jacks Group</td><td>Trio Krayon hidup</td></tr>
+                            <tr><td><strong>Martin</strong></td><td>—</td><td>Nightmare FU</td><td>Satu angkatan sekolah sama Misa</td></tr>
+                            <tr><td><strong>EX-987</strong></td><td>—</td><td>Jacks Group</td><td>Experimen berlevel tinggi</td></tr>
+                            <tr><td><strong>Nightmare</strong></td><td>GRUP</td><td>Nightmare FU</td><td>Entitas kolektif teror</td></tr>
+                            <tr><td id="the-god"><strong>THE GOD (EX-0199)</strong></td><td>—</td><td>Long FU</td><td><span class="char-card-tag tag-supreme">KASTA TERTINGGI</span></td></tr>
                         </table>
+                    </div>
 
-                        <h4 class="wiki-subsection-header3">The Toys & Maskots</h4>
+                    <hr class="wiki-hr">
+
+                    <!-- ============ CH6 ============ -->
+                    <div id="ch6">
+                        <h3 class="wiki-subsection-header">3.6 Bab 6 — Bertemu Malian <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #0c0a09, #f97316); color: #fbbf24;">
+                                <div class="ch-narrative-num" style="background: #431407;">6</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Setelah peristiwa pembakaran Smileng FU di Bab 4, Adre dan Misa akhirnya <strong>bertemu secara langsung dengan Malian</strong>. Bab ini mengungkap lebih banyak tentang sosok Malian — siapa dia, mengapa dia berada di PPc, dan koneksi dia dengan agama <strong>MalAstreoin</strong>.</p>
+                                <p>Bab ini bersifat eksposisi mendalam, membangun hubungan antara tiga protagonis utama: Adre (manusia), Misa (experimen), dan Malian (entitas agama).</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Area dalam PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Fokus: Malian
+                            </div>
+                        </div>
+
                         <div class="char-grid">
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #e2e8f0, #94a3b8);">
-                                        <span class="iconify" data-icon="lucide:box"></span>
-                                    </div>
-                                    Saly
+                            <div class="char-card" style="border-left: 4px solid #f97316;">
+                                <div class="char-card-header" style="background: #0c0a09; color: #fbbf24;">
+                                    <div class="char-card-avatar" style="background: rgba(249,115,22,0.2); color: #f97316;"><span class="iconify" data-icon="lucide:flame"></span></div>
+                                    Malian
                                 </div>
-                                <div class="char-card-body">
-                                    Mainan bertema "Garam" dari plastik (plesetan "Asin").
-                                    <br><span class="char-card-tag tag-netral">Jacks Group</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1a1a2e, #334155);">
-                                        <span class="iconify" data-icon="lucide:scissors"></span>
-                                    </div>
-                                    Braids
-                                </div>
-                                <div class="char-card-body">
-                                    Versi boneka terkutuk Jepang — rambut hitam panjang, tatapan kosong, misterius.
-                                    <br><span class="char-card-tag tag-antagonis">Nightmare FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
-                                        <span class="iconify" data-icon="lucide:pen-tool"></span>
-                                    </div>
-                                    Purpel, Sian, Mian
-                                </div>
-                                <div class="char-card-body">
-                                    Trio Krayon hidup. Warna ungu, cyan, dan merah muda.
-                                    <br><span class="char-card-tag tag-netral">Jacks Group</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">
-                                        <span class="iconify" data-icon="lucide:user-circle"></span>
-                                    </div>
-                                    Martin
-                                </div>
-                                <div class="char-card-body">
-                                    Satu angkatan sekolah sama Misa. Anggota Nightmare FU.
-                                    <br><span class="char-card-tag tag-mysterius">Nightmare FU</span>
+                                <div class="char-card-body" style="font-size: 13px;">
+                                    <strong style="color:#f97316;">Fokus Bab 6</strong><br><br>
+                                    Pengikut <strong>MalAstreoin</strong>. Di bab ini, latar belakangnya dieksplorasi secara mendalam. Hubungannya dengan PPc dan alasannya membantu Adre-Misa mulai terungkap. Kekuatan apinya bukan sekadar fisik — ada dimensi spiritual/agama di baliknya.
+                                    <br><br>
+                                    <span class="char-card-tag tag-deus">MalAstreoin</span>
+                                    <span class="char-card-tag tag-ally">Sekutu Kunci</span>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 class="wiki-subsection-header3">Entitas Khusus</h4>
-                        <table class="wiki-table wiki-table-wide">
-                            <tr><th>Nama</th><th>Tipe</th><th>Grup</th><th>Keterangan</th></tr>
-                            <tr><td><strong>EX-987</strong></td><td>Experimen</td><td>Jacks Group</td><td>Unit eksperimen berlevel tinggi</td></tr>
-                            <tr><td><strong>Nightmare</strong></td><td>GRUP (bukan individu)</td><td>Nightmare FU</td><td>Entitas kolektif teror</td></tr>
-                            <tr><td id="the-god"><strong>THE GOD (EX-0199)</strong></td><td><span class="char-card-tag tag-supreme">KASTA TERTINGGI</span></td><td>Long FU</td><td>Entitas paling kuat di seluruh database</td></tr>
-                        </table>
-
-                        <div class="wiki-notice wiki-notice-red">
-                            <span class="iconify" data-icon="lucide:skull"></span>
-                            <div><strong>THE GOD (EX-0199)</strong> menduduki kasta tertinggi dalam hierarki GLG Industries. Desain rinci atas karakter ini belum dirilis oleh pencipta.</div>
+                        <div class="wiki-notice wiki-notice-purple">
+                            <span class="iconify" data-icon="lucide:help-circle"></span>
+                            <div><strong>Pertanyaan Terbuka:</strong> Mengapa Malian berada di PPc? Apakah dia juga terjebak dalam loop, atau dia masuk dengan cara yang berbeda dari Adre? Hubungan Malian dengan Para Grandma masih menjadi misteri.</div>
                         </div>
                     </div>
 
                     <hr class="wiki-hr">
 
-                    <!-- CH4 -->
-                    <div id="ch4">
-                        <h3 class="wiki-subsection-header">3.4 Bab 4 — Fraksi SIN <a class="wiki-edit-link" href="#">[sunting]</a></h3>
-                        <p>Bab keempat memperkenalkan 16 karakter yang sebagian besar terkait langsung dengan faksi SIN dan pasukan Jacks Group.</p>
+                    <!-- ============ CH7 ============ -->
+                    <div id="ch7">
+                        <h3 class="wiki-subsection-header">3.7 Bab 7 — Brilioan <a class="wiki-edit-link" href="#">[sunting]</a></h3>
 
-                        <table class="wiki-table wiki-table-wide">
-                            <tr><th>#</th><th>Nama</th><th>Grup</th><th>Keterangan</th></tr>
-                            <tr><td>1</td><td><strong>Sintin</strong></td><td>Jacks Group</td><td>Anak buah SIN</td></tr>
-                            <tr><td>2</td><td><strong>Sindack</strong></td><td>Jacks Group</td><td>Anak buah SIN</td></tr>
-                            <tr><td>3</td><td><strong>Sinsin</strong></td><td>Jacks Group</td><td>Anak buah SIN</td></tr>
-                            <tr><td>4</td><td><strong>988Sin</strong></td><td>Jacks Group</td><td>Variasi SIN — kemungkinan unit ke-988</td></tr>
-                            <tr><td>5</td><td><strong>8</strong></td><td>Nightmare FU</td><td>Stiker Sial</td></tr>
-                            <tr><td>6</td><td><strong>16</strong></td><td>Nightmare FU</td><td>Stiker Sial</td></tr>
-                            <tr><td>7</td><td><strong>Proppls</strong></td><td>Nightmare FU</td><td>—</td></tr>
-                            <tr><td>8</td><td><strong>Doggy</strong></td><td>Jacks Group</td><td>—</td></tr>
-                            <tr><td>9</td><td><strong>Puppy Miled</strong></td><td>Jacks Group</td><td>—</td></tr>
-                            <tr><td>10</td><td><strong>Msaaa</strong></td><td>Nightmare FU</td><td>Pembunuh</td></tr>
-                            <tr><td>11</td><td><strong>Kisst</strong></td><td>Nightmare FU</td><td>—</td></tr>
-                            <tr><td>12</td><td><strong>Hugg</strong></td><td>Nightmare FU</td><td>—</td></tr>
-                            <tr><td>13</td><td><strong>Adrean</strong></td><td>—</td><td>Kemungkinan varian/echo dari Adre</td></tr>
-                            <tr><td>14</td><td><strong>Juni</strong></td><td>Jacks Group</td><td>Bulan Juni (tema kalender)</td></tr>
-                            <tr><td>15</td><td><strong>July</strong></td><td>Jacks Group</td><td>Bulan Juli</td></tr>
-                            <tr><td>16</td><td><strong>Oct</strong></td><td>Jacks Group</td><td>Bulan Oktober</td></tr>
-                        </table>
-
-                        <div class="wiki-notice wiki-notice-yellow">
-                            <span class="iconify" data-icon="lucide:lightbulb"></span>
-                            <div><strong>Teori Komunitas:</strong> "8" dan "16" kemungkinan merupakan entitas berbasis stiker yang membawa kesialan, sesuai tradisi horor Jepang tentang angka sial.</div>
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #1a1a2e, #2d1b4e); color: #c084fc;">
+                                <div class="ch-narrative-num" style="background: #1a0a2e;">7</div>
+                                Ringkasan Cerita
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p>Adre, Misa, dan Malian berhadapan dengan <strong>Brilioan</strong> — orang paling cerdas di seluruh database karakter dan <strong>Wakil SIN</strong>. Brilioan adalah antagonis yang tidak bergantung pada kekerasan fisik, melainkan pada <strong>jebakan intelektual</strong> yang membuat Adre dan kawan-kawan muter-muter.</p>
+                                <p>Melalui kombinasi kecerdasan Adre (pembuat Mesin IT), pengetahuan Misa tentang PPc, dan kekuatan Malian, mereka akhirnya berhasil <strong>melumpuhkan Brilioan</strong>. Ini adalah boss fight intelektual sebelum boss fight final di Bab 8.</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:map-pin"></span> Lokasi: Area elit PPc • <span class="iconify" data-icon="lucide:users" style="margin-left:8px;"></span> Boss: Brilioan
+                            </div>
                         </div>
-                    </div>
 
-                    <hr class="wiki-hr">
-
-                    <!-- CH5 -->
-                    <div id="ch5">
-                        <h3 class="wiki-subsection-header">3.5 Bab 5 — Para Nenek Moyang <a class="wiki-edit-link" href="#">[sunting]</a></h3>
-                        <p>Bab terakhir memperkenalkan 6 karakter kunci yang merupakan akar dari seluruh silsilah dan konflik dalam GLG Industries.</p>
-
-                        <div class="char-grid" id="grandma">
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1a1a2e, #2d1b4e);">
-                                        <span class="iconify" data-icon="lucide:brain"></span>
-                                    </div>
+                        <div class="char-grid">
+                            <div class="char-card" style="border-left: 4px solid #7c3aed;">
+                                <div class="char-card-header" style="background: #1a1a2e; color: #c084fc;">
+                                    <div class="char-card-avatar" style="background: rgba(124,58,237,0.2); color: #c084fc;"><span class="iconify" data-icon="lucide:brain"></span></div>
                                     Brilioan
                                 </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">The Evil Genius — Wakil SIN</strong><br>
-                                    Orang paling cerdas di seluruh database. Antagonis yang nggak butuh otot tapi bisa bikin jebakan mematikan. Penganut fanatik SilAstrein.
-                                    <br><span class="char-card-tag tag-antagonis">Wakil SIN</span>
+                                <div class="char-card-body" style="font-size: 13px;">
+                                    <strong style="color:#7c3aed;">BOSS BAB 7 — The Evil Genius</strong><br><br>
+                                    Wakil SIN. Orang paling cerdas di seluruh database. Penganut fanatik <strong>SilAstrein</strong>. Tidak butuh otot — bikin jebakan yang mematikan. <strong>Dilumpuhkan</strong> oleh trio Adre-Misa-Malian.
+                                    <br><br>
+                                    <span class="char-card-tag tag-boss">Boss Bab 7</span>
+                                    <span class="char-card-tag tag-elite">Wakil SIN</span>
                                     <span class="char-card-tag tag-elite">SMA DU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #4a044e, #7e22ce);">
-                                        <span class="iconify" data-icon="lucide:eye"></span>
-                                    </div>
-                                    Grandma SIN
-                                </div>
-                                <div class="char-card-body">
-                                    Pemegang silsilah tertinggi faksi SIN. Wujud "primordial" atau kuno.
-                                    <br><span class="char-card-tag tag-grandma">Long FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #581c87, #9333ea);">
-                                        <span class="iconify" data-icon="lucide:scan-face"></span>
-                                    </div>
-                                    Grandma 109
-                                </div>
-                                <div class="char-card-body">
-                                    Versi awal dari EX-109 (Long Hand). Nenek moyang sang dalang.
-                                    <br><span class="char-card-tag tag-grandma">Long FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #dc2626, #f87171);">
-                                        <span class="iconify" data-icon="lucide:graduation-cap"></span>
-                                    </div>
-                                    Grandma Misa
-                                </div>
-                                <div class="char-card-body">
-                                    Akar dari perseteruan keluarga Misa.
-                                    <br><span class="char-card-tag tag-grandma">Long FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #b91c1c, #ef4444);">
-                                        <span class="iconify" data-icon="lucide:skull"></span>
-                                    </div>
-                                    Grandma Msaa
-                                </div>
-                                <div class="char-card-body">
-                                    Akar dari perseteruan keluarga Misa. Terkait dengan Msaaa (Pembunuh).
-                                    <br><span class="char-card-tag tag-grandma">Long FU</span>
-                                </div>
-                            </div>
-                            <div class="char-card">
-                                <div class="char-card-header">
-                                    <div class="char-card-avatar" style="background: linear-gradient(135deg, #1e3a5f, #3b82f6);">
-                                        <span class="iconify" data-icon="lucide:user"></span>
-                                    </div>
-                                    Grandma Adr
-                                </div>
-                                <div class="char-card-body">
-                                    <strong style="color:var(--wiki-text);">Kunci Loop</strong><br>
-                                    Nenek moyang Adre. Ini pasti kunci kenapa Adre terpilih masuk loop.
-                                    <br><span class="char-card-tag tag-grandma">Long FU</span>
-                                    <span class="char-card-tag tag-mysterius">Kunci Plot</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wiki-notice wiki-notice-green">
-                            <span class="iconify" data-icon="lucide:book-open"></span>
-                            <div><strong>Penting:</strong> Para Grandma memiliki wujud yang jauh berbeda dari keturunannya. Kalau cicitnya imut-imut setinggi lutut, para Grandma punya wujud yang lebih <em>"primordial"</em> atau kuno — menandakan evolusi/perubahan bentuk antar-generasi.</div>
+                            <span class="iconify" data-icon="lucide:check-circle"></span>
+                            <div><strong>Hasil Bab 7:</strong> Brilioan dilumpuhkan. Jalan menuju SIN terbuka. Namun, melumpuhkan Brilioan tidak berarti melumpuhkan seluruh faksi — pasukan Jacks Group (66.711 karakter) masih menjadi ancaman di latar.</div>
+                        </div>
+                    </div>
+
+                    <hr class="wiki-hr">
+
+                    <!-- ============ CH8 ============ -->
+                    <div id="ch8">
+                        <h3 class="wiki-subsection-header">3.8 Bab 8 — SIN & Fuyunnis <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+
+                        <div class="ch-narrative">
+                            <div class="ch-narrative-header" style="background: linear-gradient(135deg, #450a0a, #7f1d1d); color: #fca5a5;">
+                                <div class="ch-narrative-num" style="background: #2a0404;">8</div>
+                                Ringkasan Cerita — <span style="font-size:12px; font-weight:400; opacity:0.8;">BAB FINAL</span>
+                            </div>
+                            <div class="ch-narrative-body">
+                                <p><strong>Bab final.</strong> Adre dan Misa berhadapan dengan <strong>SIN</strong> — Pembantu Utama EX-109 dan pemimpin agama <strong>SilAstrein</strong>. Pertarungan ini adalah klimaks seluruh cerita.</p>
+                                <p>Setelah mengalahkan SIN, Adre dan Misa berusaha naik ke permukaan. Namun, <strong>Malian</strong> muncul kembali dan mencoba menghadang — bukan untuk menyerang Adre-Misa, tapi karena alasan yang masih menjadi <em>cliffhanger</em>. Tiba-tiba, <strong>Fuyunnis Brianlin</strong> (6 elit, kekuatan tempur di atas Long FU) muncul dan <strong>menghadang Malian</strong>.</p>
+                                <p>Dengan Malian dihadang, Adre dan Misa <strong>berhasil naik ke permukaan</strong>. Bab — dan cerita — berakhir di sini.</p>
+                            </div>
+                            <div class="ch-narrative-footer">
+                                <span class="iconify" data-icon="lucide:swords"></span> Boss: SIN • <span class="iconify" data-icon="lucide:shield" style="margin-left:8px;"></span> Anti-klimaks: Fuyunnis Brianlin vs Malian • <span class="iconify" data-icon="lucide:flag" style="margin-left:8px; color:#dc2626;"></span> <strong>STATUS: CLIFFHANGER</strong>
+                            </div>
+                        </div>
+
+                        <div class="char-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                            <div class="char-card" style="border-left: 4px solid var(--wiki-red);">
+                                <div class="char-card-header" style="background: #2d1b4e; color: #c084fc;">
+                                    <div class="char-card-avatar" style="background: rgba(192,132,252,0.2); color: #c084fc;"><span class="iconify" data-icon="lucide:eye"></span></div>
+                                    SIN
+                                </div>
+                                <div class="char-card-body" style="font-size: 13px;">
+                                    <strong style="color:var(--wiki-red);">BOSS FINAL BAB 8</strong><br><br>
+                                    Pembantu Utama EX-109. Pemimpin agama <strong>SilAstrein</strong>. Mengendalikan Sintin, Sindack, Sinsin, 988Sin, dan seluruh faksi bawahannya. <strong>Dikalahkan</strong> oleh Adre dan Misa.
+                                    <br><br>
+                                    <span class="char-card-tag tag-final">BOSS FINAL</span>
+                                    <span class="char-card-tag tag-boss">Dikalahkan</span>
+                                </div>
+                            </div>
+                            <div class="char-card" style="border-left: 4px solid #ec4899;">
+                                <div class="char-card-header" style="background: linear-gradient(135deg, #ec4899, #f472b6); color: #fff;">
+                                    <div class="char-card-avatar" style="background: rgba(255,255,255,0.2); color: #fff;"><span class="iconify" data-icon="lucide:swords"></span></div>
+                                    Fuyunnis Brianlin
+                                </div>
+                                <div class="char-card-body" style="font-size: 13px;">
+                                    <strong style="color:#ec4899;">PENGHADANG TERAKHIR</strong><br><br>
+                                    6 Orang Elit. Eks Orang Terpandang. Kekuatan tempur <strong>di atas Long FU</strong>. Muncul di momen terakhir untuk <strong>menghadang Malian</strong>, membiarkan Adre dan Misa naik ke permukaan.
+                                    <br><br>
+                                    <span class="char-card-tag tag-boss">6 Elit</span>
+                                    <span class="char-card-tag tag-mysterius">Cliffhanger</span>
+                                </div>
+                            </div>
+                            <div class="char-card" style="border-left: 4px solid #f97316;">
+                                <div class="char-card-header" style="background: #0c0a09; color: #fbbf24;">
+                                    <div class="char-card-avatar" style="background: rgba(249,115,22,0.2); color: #f97316;"><span class="iconify" data-icon="lucide:flame"></span></div>
+                                    Malian
+                                </div>
+                                <div class="char-card-body" style="font-size: 13px;">
+                                    <strong style="color:#f97316;">DIHADANG FUYUNNIS</strong><br><br>
+                                    Setelah pertarungan SIN, Malian mencoba menghadang Adre-Misa (alasan tidak jelas — <em>cliffhanger</em>). Tapi Fuyunnis Brianlin muncul dan menghadangnya.
+                                    <br><br>
+                                    <span class="char-card-tag tag-deus">Dihadang</span>
+                                    <span class="char-card-tag tag-mysterius">Cliffhanger</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wiki-notice wiki-notice-red">
+                            <span class="iconify" data-icon="lucide:alert-octagon"></span>
+                            <div><strong>CLIFFHANGER AKHIR:</strong> Cerita berakhir dengan tiga pertanyaan besar tanpa jawaban: (1) Mengapa Malian menghadang Adre-Misa? (2) Apa yang terjadi dalam pertarungan Fuyunnis Brianlin vs Malian? (3) Apakah "permukaan" benar-benar kebebasan, atau bagian lain dari loop?</div>
+                        </div>
+
+                        <h4 class="wiki-subsection-header3">Karakter Pendukung Bab 8</h4>
+                        <table class="wiki-table wiki-table-wide">
+                            <tr><th>Nama</th><th>Grup</th><th>Peran di Bab 8</th></tr>
+                            <tr><td><strong>Sintin</strong></td><td>Jacks Group</td><td>Anak buah SIN, kemungkinan muncul sebagai musuh sebelum boss fight</td></tr>
+                            <tr><td><strong>Sindack</strong></td><td>Jacks Group</td><td>Anak buah SIN</td></tr>
+                            <tr><td><strong>Sinsin</strong></td><td>Jacks Group</td><td>Anak buah SIN</td></tr>
+                            <tr><td><strong>988Sin</strong></td><td>Jacks Group</td><td>Variasi SIN — unit ke-988</td></tr>
+                            <tr><td><strong>8 & 16</strong></td><td>Nightmare FU</td><td>Stiker Sial — kemungkinan obstacle di area final</td></tr>
+                            <tr><td><strong>Doggy & Puppy Miled</strong></td><td>Jacks Group</td><td>Kemungkinan muncul sebagai penjaga area</td></tr>
+                            <tr><td><strong>Msaaa</strong></td><td>Nightmare FU</td><td>Pembunuh — kemungkinan mini-boss</td></tr>
+                            <tr><td><strong>Kisst & Hugg</strong></td><td>Nightmare FU</td><td>Obstacle di area final</td></tr>
+                            <tr><td><strong>Adrean</strong></td><td>—</td><td>Varian/echo dari Adre — kemungkinan plot twist</td></tr>
+                            <tr><td><strong>Juni, July, Oct</strong></td><td>Jacks Group</td><td>Tema kalender — kemungkinan NPC atau obstacle</td></tr>
+                            <tr><td><strong>Proppls</strong></td><td>Nightmare FU</td><td>—</td></tr>
+                        </table>
+                    </div>
+
+                    <hr class="wiki-hr">
+
+                    <!-- ============ GRANDMA (Appendix) ============ -->
+                    <div id="grandma">
+                        <h3 class="wiki-subsection-header">3.9 Lampiran — Para Nenek Moyang <a class="wiki-edit-link" href="#">[sunting]</a></h3>
+                        <p>Para Grandma adalah entitas kuno yang menjadi akar silsilah seluruh faksi. Mereka tidak muncul secara langsung dalam 8 bab, namun keberadaan mereka dirujuk melalui lore, surat-surat, dan hierarki faksi.</p>
+
+                        <div class="char-grid">
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #4a044e, #7e22ce);"><span class="iconify" data-icon="lucide:eye"></span></div>Grandma SIN</div>
+                                <div class="char-card-body">Pemegang silsilah tertinggi faksi SIN. Wujud "primordial".<br><span class="char-card-tag tag-grandma">Long FU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #581c87, #9333ea);"><span class="iconify" data-icon="lucide:scan-face"></span></div>Grandma 109</div>
+                                <div class="char-card-body">Versi awal dari EX-109 (Long Hand). Nenek moyang sang dalang.<br><span class="char-card-tag tag-grandma">Long FU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #dc2626, #f87171);"><span class="iconify" data-icon="lucide:graduation-cap"></span></div>Grandma Misa</div>
+                                <div class="char-card-body">Akar perseteruan keluarga Misa.<br><span class="char-card-tag tag-grandma">Long FU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #b91c1c, #ef4444);"><span class="iconify" data-icon="lucide:skull"></span></div>Grandma Msaa</div>
+                                <div class="char-card-body">Akar perseteruan keluarga Misa. Terkait Msaaa (Pembunuh).<br><span class="char-card-tag tag-grandma">Long FU</span></div>
+                            </div>
+                            <div class="char-card">
+                                <div class="char-card-header"><div class="char-card-avatar" style="background: linear-gradient(135deg, #1e3a5f, #3b82f6);"><span class="iconify" data-icon="lucide:user"></span></div>Grandma Adr</div>
+                                <div class="char-card-body"><strong style="color:var(--wiki-text);">Kunci Loop</strong><br>Nenek moyang Adre. Kunci kenapa Adre terpilih masuk loop.<br><span class="char-card-tag tag-grandma">Long FU</span><span class="char-card-tag tag-mysterius">Kunci Plot</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1586,107 +1375,56 @@
                 <!-- ===== SECTION 4: GRUP ELIT ===== -->
                 <div class="wiki-section" id="grup-elit">
                     <h2 class="wiki-section-header">4. Grup Elit & Pasukan <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-                    <p>Total <strong>68.575 karakter</strong> tergabung dalam 6 faksi utama, masing-masing dengan peran dan hierarki tersendiri.</p>
 
                     <div class="group-grid">
-                        <!-- LONG FU -->
                         <div class="group-card" id="long-fu">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fbbf24;">
-                                <span>Long FU</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.15); color:#fbbf24;">13 Karakter</span>
+                                <span>Long FU</span><span class="group-card-count" style="background:rgba(255,255,255,0.15); color:#fbbf24;">13</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Kasta Dewa</strong> — Pemegang kendali tertinggi dan silsilah kuno.
-                                <div class="group-card-members">
-                                    <span>Grandma SIN</span> <span>Grandma Msaa</span> <span>Grandma Misa</span> <span>Grandma 109</span> <span>Grandma Adr</span> <span>THE GOD (EX-0199)</span> <span>+7 anggota lainnya</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Kasta Dewa</strong> — Pemegang kendali tertinggi.<div class="group-card-members"><span>Grandma SIN</span><span>Grandma 109</span><span>Grandma Misa</span><span>Grandma Msaa</span><span>Grandma Adr</span><span>THE GOD</span></div></div>
                         </div>
-
-                        <!-- FUYUNNIS -->
                         <div class="group-card" id="fuyunnis">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #ec4899, #f472b6); color: #fff;">
-                                <span>Fuyunnis Brianlin</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">6 Karakter</span>
+                                <span>Fuyunnis Brianlin</span><span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">6</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Eks Orang Terpandang</strong> — Kelompok paling prestisius. Kekuatan di atas Long FU secara <em>skill tempur</em>. Jago bela diri.
-                                <div class="group-card-members">
-                                    <span>6 Orang Elit</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Eks Orang Terpandang</strong> — Skill tempur di atas Long FU. <strong>Menghadang Malian di Bab 8.</strong><div class="group-card-members"><span>6 Orang Elit</span></div></div>
                         </div>
-
-                        <!-- SMA DU -->
                         <div class="group-card" id="sma-du">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); color: #fff;">
-                                <span>SMA DU</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">872 Karakter</span>
+                                <span>SMA DU</span><span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">872</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Kelompok Bangsawan & Jenius</strong> — Area elit, penuh politik dan otak encer.
-                                <div class="group-card-members">
-                                    <span>Keluarga YOS</span> <span>Brilioan</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Bangsawan & Jenius</strong> — Politik dan otak.<div class="group-card-members"><span>Keluarga YOS</span><span>Brilioan</span></div></div>
                         </div>
-
-                        <!-- NIGHTMARE FU -->
                         <div class="group-card" id="nightmare-fu">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: #fff;">
-                                <span>Nightmare FU</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">921 Karakter</span>
+                                <span>Nightmare FU</span><span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">921</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Kelompok Terkutuk</strong> — Kumpulan karakter berbahaya, misterius, dan penuh teror.
-                                <div class="group-card-members">
-                                    <span>Miza</span> <span>Mis</span> <span>Braids</span> <span>Martin</span> <span>8 & 16</span> <span>Proppls</span> <span>Msaaa</span> <span>Hugg</span> <span>Pipz</span> <span>Protey</span> <span>Waste</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Kelompok Terkutuk</strong> — Berbahaya dan misterius.<div class="group-card-members"><span>Miza</span><span>Mis</span><span>Braids</span><span>Martin</span><span>8 & 16</span><span>Msaaa</span><span>Hugg</span><span>Waste</span><span>Pipz</span><span>Protey</span></div></div>
                         </div>
-
-                        <!-- SMILENG FU -->
                         <div class="group-card" id="smileng-fu">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #10b981, #059669); color: #fff;">
-                                <span>Smileng FU</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">92 Karakter</span>
+                                <span>Smileng FU</span><span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">92</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Kelompok Dekat</strong> — Grup personal, kemungkinan circle utama di sekitar Adre/Misa.
-                                <div class="group-card-members">
-                                    <span>MISA</span> <span>Briam</span> <span>Lian</span> <span>Ludwi</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Pasukan Pengkejar</strong> — <strong>Dibakar seluruhnya oleh Malian di Bab 4.</strong><div class="group-card-members"><span>MISA</span><span>Briam</span><span>Lian</span><span>Ludwi</span></div></div>
                         </div>
-
-                        <!-- JACKS GROUP -->
                         <div class="group-card" id="jacks-group">
                             <div class="group-card-header" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff;">
-                                <span>Jacks Group</span>
-                                <span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">66.711 Karakter</span>
+                                <span>Jacks Group</span><span class="group-card-count" style="background:rgba(255,255,255,0.2); color:#fff;">66.711</span>
                             </div>
-                            <div class="group-card-body">
-                                <strong>Pasukan Masif</strong> — Infrastruktur utama pabrik, pekerja, asisten, dan pasukan tempur jumlah besar.
-                                <div class="group-card-members">
-                                    <span>Sintin</span> <span>Sindack</span> <span>Sinsin</span> <span>Baby & Doll</span> <span>Miya</span> <span>Kks & Loid</span> <span>Pos</span> <span>Musho</span> <span>Kit Kitchen</span> <span>Bedrooo</span> <span>Lily</span> <span>Frezze & Chi</span> <span>Trio Krayon</span> <span>Saly</span> <span>Juni</span> <span>July</span> <span>Oct</span>
-                                </div>
-                            </div>
+                            <div class="group-card-body"><strong>Pasukan Masif</strong> — Infrastruktur pabrik.<div class="group-card-members"><span>Miya</span><span>Kks & Loid</span><span>Pos</span><span>Musho</span><span>Kit Kitchen</span><span>Bedrooo</span><span>Lily</span><span>Frezze & Chi</span><span>Trio Krayon</span><span>Saly</span><span>Sintin</span><span>Sindack</span><span>Sinsin</span><span>988Sin</span><span>Baby & Doll</span></div></div>
                         </div>
                     </div>
 
-                    <!-- Hierarki Visual -->
-                    <h3 class="wiki-subsection-header">Hierarki Kekuatan Tempur</h3>
-                    <div class="wiki-quote">
-                        "Fuyunnis Brianlin > Long FU (secara skill tempur). Namun dalam hal kendali dan silsilah, Long FU tetap berada di puncak hierarki."
-                    </div>
+                    <h3 class="wiki-subsection-header">Peran Faksi per Bab</h3>
                     <table class="wiki-table">
-                        <tr><th>Peringkat</th><th>Grup</th><th>Jumlah</th><th>Tipe Kekuatan</th></tr>
-                        <tr><td>1</td><td><strong>Fuyunnis Brianlin</strong></td><td>6</td><td>Skill tempur tertinggi</td></tr>
-                        <tr><td>2</td><td><strong>Long FU</strong></td><td>13</td><td>Kendali & silsilah tertinggi</td></tr>
-                        <tr><td>3</td><td><strong>SMA DU</strong></td><td>872</td><td>Politik & kecerdasan</td></tr>
-                        <tr><td>4</td><td><strong>Nightmare FU</strong></td><td>921</td><td>Terror & kekacauan</td></tr>
-                        <tr><td>5</td><td><strong>Smileng FU</strong></td><td>92</td><td>Circle personal</td></tr>
-                        <tr><td>6</td><td><strong>Jacks Group</strong></td><td>66.711</td><td>Jumlah masif & infrastruktur</td></tr>
+                        <tr><th>Faksi</th><th>Bab 1</th><th>Bab 2</th><th>Bab 3</th><th>Bab 4</th><th>Bab 5</th><th>Bab 6</th><th>Bab 7</th><th>Bab 8</th></tr>
+                        <tr><td>Smileng FU</td><td style="background:#f0fdf4;">—</td><td style="background:#fef9c3;">? (mengawasi)</td><td style="background:#fef9c3;">?</td><td style="background:#fee2e2;font-weight:700;">DIBAKAR</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>SMA DU</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="background:#fef9c3;font-weight:700;">AKTIF</td><td>—</td><td style="background:#fee2e2;">Brilioan dilumpuhkan</td><td>—</td></tr>
+                        <tr><td>Nightmare FU</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="background:#fef9c3;font-weight:700;">AKTIF</td><td>—</td><td>—</td><td style="background:#fef9c3;">Obstacle</td></tr>
+                        <tr><td>Jacks Group</td><td style="background:#fef9c3;">Pendukung</td><td style="background:#fef9c3;">Pendukung</td><td style="background:#fef9c3;font-weight:700;">AKTIF</td><td>—</td><td style="background:#fef9c3;">AKTIF</td><td>—</td><td>—</td><td style="background:#fef9c3;font-weight:700;">Musuh</td></tr>
+                        <tr><td>Fuyunnis Brianlin</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="background:#ede9fe;font-weight:700;">MENGHADANG MALIAN</td></tr>
+                        <tr><td>Long FU</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="background:#fef9c3;">Dirujuk</td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr style="background:#fff;"><td><strong>Malian</strong></td><td>—</td><td>—</td><td>—</td><td style="background:#fef3c7;font-weight:700;">MUNCUL</td><td>—</td><td style="background:#fef3c7;font-weight:700;">FOKUS</td><td>—</td><td style="background:#fee2e2;font-weight:700;">DIHADANG</td></tr>
                     </table>
                 </div>
 
@@ -1695,8 +1433,6 @@
                 <!-- ===== SECTION 5: SILSILAH ===== -->
                 <div class="wiki-section" id="silsilah">
                     <h2 class="wiki-section-header">5. Silsilah & Kasta <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-                    <p>Hierarki dalam GLG Industries berbentuk piramida dengan para Grandma di puncak sebagai nenek moyang seluruh entitas.</p>
-
                     <div class="wiki-collapsible-header" onclick="toggleCollapsible(this)">
                         <span>Lihat Diagram Silsilah (Teks)</span>
                         <span class="iconify" data-icon="lucide:chevron-down" style="font-size:18px;"></span>
@@ -1706,7 +1442,7 @@
 ┌─────────────────────────────────────────────────────────┐
 │              PARA GRANDMA (Long FU)                     │
 │  Grandma SIN • Grandma 109 • Grandma Misa               │
-│  Grandma Msaa • Grandma Adr • +1 lainnya                │
+│  Grandma Msaa • Grandma Adr                             │
 │              THE GOD (EX-0199)                          │
 └──────────────────────┬──────────────────────────────────┘
                        │
@@ -1715,34 +1451,40 @@
    ┌──────────┐ ┌──────────┐ ┌──────────────┐
    │ SMA DU   │ │Nightmare │ │ Smileng FU   │
    │ (872)    │ │ FU (921) │ │ (92)         │
-   │ YOS Fam  │ │ Miza,Mis │ │ MISA,Briam,  │
-   │ Brilioan │ │ Braids.. │ │ Lian,Ludwi   │
-   └────┬─────┘ └────┬─────┘ └──────┬───────┘
-        │            │              │
-        ▼            ▼              ▼
+   │ YOS Fam  │ │ Miza,Mis │ │ ★ DIBAKAR    │
+   │ Brilioan │ │ Braids.. │ │   oleh Malian│
+   └────┬─────┘ └────┬─────┘ └──────────────┘
+        │            │
+        ▼            ▼
    ┌──────────────────────────────────────┐
    │         JACKS GROUP (66.711)         │
-   │  Miya, Kks, Loid, Pos, Musho,       │
-   │  Kit Kitchen, Bedrooo, Lily,         │
-   │  Frezze, Chi, Baby/Doll, Trio Krayon │
+   │  Infrastruktur pabrik & pasukan      │
    └──────────────────┬───────────────────┘
                       │
-                      ▼
-              ┌──────────────┐
-              │    ADRE      │
-              │ (Manusia)    │
-              └──────────────┘
+              ┌───────┴───────┐
+              ▼               ▼
+      ┌──────────────┐ ┌──────────────┐
+      │ SIN          │ │ EX-109       │
+      │ (Boss Bab 8) │ │ (Long Hand)  │
+      └──────┬───────┘ └──────────────┘
+             │
+      ┌──────┴───────┐
+      ▼               ▼
+┌────────────┐ ┌──────────────┐
+│ Fuyunnis   │ │ ADRE & MISA  │
+│ Brianlin   │ │ → Permukaan  │
+│ (vs Malian)│ │ (CLIFFHANGER)│
+└────────────┘ └──────────────┘
                         </pre>
                     </div>
-
                     <h3 class="wiki-subsection-header">Garis Keturunan Kunci</h3>
                     <table class="wiki-table">
-                        <tr><th>Garis</th><th>Nenek Moyang</th><th>Keturunan yang Diketahui</th></tr>
+                        <tr><th>Garis</th><th>Nenek Moyang</th><th>Keturunan</th></tr>
                         <tr><td>Garis SIN</td><td>Grandma SIN</td><td>SIN → Sintin, Sindack, Sinsin, 988Sin, Brilioan</td></tr>
                         <tr><td>Garis 109</td><td>Grandma 109</td><td>EX-109 (Long Hand) — Dalang Utama</td></tr>
                         <tr><td>Garis Misa</td><td>Grandma Misa</td><td>Miza → Mis → Misa (Experimen 023)</td></tr>
                         <tr><td>Garis Msaa</td><td>Grandma Msaa</td><td>Msaaa (Pembunuh)</td></tr>
-                        <tr><td>Garis Adr</td><td>Grandma Adr</td><td>Adre (Manusia Murni) — mungkin juga Adrean</td></tr>
+                        <tr><td>Garis Adr</td><td>Grandma Adr</td><td>Adre (Manusia Murni) — mungkin Adrean</td></tr>
                         <tr><td>Garis Yos</td><td>—</td><td>Daddy Yos → Mommy Yos → Sister Yos, Child Yos</td></tr>
                     </table>
                 </div>
@@ -1752,55 +1494,43 @@
                 <!-- ===== SECTION 6: DALANG ===== -->
                 <div class="wiki-section" id="dalang">
                     <h2 class="wiki-section-header">6. Dalang Utama <a class="wiki-edit-link" href="#">[sunting]</a></h2>
-
                     <div class="wiki-notice wiki-notice-red">
                         <span class="iconify" data-icon="lucide:alert-octagon"></span>
                         <div><strong>PERINGATAN SPOILER:</strong> Bagian ini mengandung informasi kunci tentang plot utama GLG Industries.</div>
                     </div>
-
                     <div class="char-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
                         <div class="char-card" style="border-left: 4px solid var(--wiki-red);">
                             <div class="char-card-header" style="background: #1a1a2e; color: #fbbf24;">
-                                <div class="char-card-avatar" style="background: rgba(251,191,36,0.2); color: #fbbf24;">
-                                    <span class="iconify" data-icon="lucide:hand"></span>
-                                </div>
+                                <div class="char-card-avatar" style="background: rgba(251,191,36,0.2); color: #fbbf24;"><span class="iconify" data-icon="lucide:hand"></span></div>
                                 EX-109 (Long Hand)
                             </div>
                             <div class="char-card-body" style="font-size: 13px;">
                                 <strong style="color:var(--wiki-red);">DALANG UTAMA</strong><br><br>
-                                Pengendali loop GLG Industries. Nenek moyangnya adalah <strong>Grandma 109</strong>. Seluruh 68.618 karakter berada dalam kendalinya, baik langsung maupun melalui hierarki faksi.
-                                <br><br>
-                                <span class="char-card-tag tag-supreme">DALANG UTAMA</span>
+                                Pengendali loop GLG Industries. Nenek moyang: <strong>Grandma 109</strong>. Tidak langsung berhadapan dengan Adre di 8 bab — SIN adalah perwakilannya.
+                                <br><br><span class="char-card-tag tag-supreme">DALANG UTAMA</span>
                             </div>
                         </div>
                         <div class="char-card" style="border-left: 4px solid #7c3aed;">
                             <div class="char-card-header" style="background: #2d1b4e; color: #c084fc;">
-                                <div class="char-card-avatar" style="background: rgba(192,132,252,0.2); color: #c084fc;">
-                                    <span class="iconify" data-icon="lucide:eye"></span>
-                                </div>
+                                <div class="char-card-avatar" style="background: rgba(192,132,252,0.2); color: #c084fc;"><span class="iconify" data-icon="lucide:eye"></span></div>
                                 SIN
                             </div>
                             <div class="char-card-body" style="font-size: 13px;">
-                                <strong style="color:#7c3aed;">PEMBANTU UTAMA</strong><br><br>
-                                Tangan kanan EX-109. Figur sentral agama <strong>SilAstrein</strong>. Mengendalikan faksi-faksi bawahannya (Sintin, Sindack, Sinsin, 988Sin) dan memiliki wakil berupa <strong>Brilioan</strong>.
-                                <br><br>
-                                <span class="char-card-tag tag-elite">PEMBANTU UTAMA</span>
+                                <strong style="color:#7c3aed;">PEMBANTU UTAMA — BOSS FINAL</strong><br><br>
+                                Tangan kanan EX-109. Pemimpin agama <strong>SilAstrein</strong>. <strong>Dikalahkan di Bab 8</strong> oleh Adre dan Misa. Wakilnya Brilioan dilumpuhkan di Bab 7.
+                                <br><br><span class="char-card-tag tag-final">BOSS FINAL BAB 8</span>
                             </div>
                         </div>
                     </div>
-
-                    <hr class="wiki-hr">
-
-                    <h3 class="wiki-subsection-header">Rantai Komando</h3>
+                    <h3 class="wiki-subsection-header">Rantai Komando & Progresi Boss</h3>
                     <table class="wiki-table">
-                        <tr><th>Level</th><th>Entitas</th><th>Peran</th></tr>
-                        <tr><td style="text-align:center;">▲1</td><td><strong>THE GOD (EX-0199)</strong></td><td>Kasta tertinggi (simbolis/kekuatan)</td></tr>
-                        <tr><td style="text-align:center;">▲2</td><td><strong>EX-109 (Long Hand)</strong></td><td>Dalang Utama — pengendali loop</td></tr>
-                        <tr><td style="text-align:center;">▲3</td><td><strong>SIN</strong></td><td>Pembantu Utama — pemimpin agama SilAstrein</td></tr>
-                        <tr><td style="text-align:center;">▲4</td><td><strong>Brilioan</strong></td><td>Wakil SIN — otak tertinggi</td></tr>
-                        <tr><td style="text-align:center;">▲5</td><td><strong>Para Grandma</strong></td><td>Nenek moyang — pemegang silsilah</td></tr>
-                        <tr><td style="text-align:center;">▲6</td><td><strong>6 Faksi Utama</strong></td><td>Pelaksana operasional</td></tr>
-                        <tr><td style="text-align:center;">▲7</td><td><strong>68.618 Karakter</strong></td><td>Populasi loop</td></tr>
+                        <tr><th>Bab</th><th>Antagonis Utama</th><th>Hasil</th></tr>
+                        <tr><td>1–3</td><td>— (Eksplorasi & puzzle)</td><td>Membangun dunia</td></tr>
+                        <tr><td>4</td><td>Smileng FU (92 karakter)</td><td style="color:#dc2626;font-weight:600;">Dibakar Malian</td></tr>
+                        <tr><td>5</td><td>Keluarga Yos & Nightmare FU</td><td>Lore & eksposisi</td></tr>
+                        <tr><td>6</td><td>— (Eksposisi Malian)</td><td>Build-up</td></tr>
+                        <tr><td>7</td><td><strong>Brilioan</strong> (Wakil SIN)</td><td style="color:#dc2626;font-weight:600;">Dilumpuhkan</td></tr>
+                        <tr><td>8</td><td><strong>SIN</strong> → Fuyunnis Brianlin</td><td style="color:#dc2626;font-weight:600;">SIN dikalahkan → Cliffhanger</td></tr>
                     </table>
                 </div>
 
@@ -1810,47 +1540,44 @@
                 <div class="wiki-section" id="catatan">
                     <h2 class="wiki-section-header">7. Catatan Kaki <a class="wiki-edit-link" href="#">[sunting]</a></h2>
                     <ol style="font-size: 13px; color: var(--wiki-text-light); line-height: 1.8;">
-                        <li id="fn1"><sup>a</sup> Total karakter dihitung dari 43 karakter individu + 68.575 anggota grup.</li>
-                        <li id="fn2"><sup>b</sup> "Loop" merujuk pada fenomena temporal di mana seluruh karakter terjebak dalam siklus berulang.</li>
-                        <li id="fn3"><sup>c</sup> Tema visual "Papercraft" menjadi ciri khas desain karakter di GLG Industries.</li>
-                        <li id="fn4"><sup>d</sup> Fuyunnis Brianlin lebih kuat dari Long FU secara <em>skill tempur individu</em>, namun Long FU memegang kendali hierarki.</li>
-                        <li id="fn5"><sup>e</sup> "Weeping Angel" adalah referensi ke makhluk fiksi dari serial Doctor Who.</li>
-                        <li id="fn6"><sup>f</sup> Desain rinci THE GOD (EX-0199) belum dirilis oleh pencipta.</li>
-                        <li id="fn7"><sup>g</sup> Hubungan antara agama MalAstreoin dan SilAstrein belum dijelaskan secara penuh.</li>
+                        <li><sup>a</sup> Struktur cerita diperluas dari 5 bab menjadi 8 bab untuk memberikan pacing yang lebih baik.</li>
+                        <li><sup>b</sup> "PaPer Co (PPc)" adalah lokasi sentral seluruh cerita — pabrik yang terbengkalai yang menyimpan loop.</li>
+                        <li><sup>c</sup> "Mesin IT" (Init Teknologi) adalah perangkat buatan Adre yang menjadi kunci masuk ke PPc.</li>
+                        <li><sup>d</sup> Malian adalah satu-satunya karakter yang bukan bagian dari hierarki faksi manapun — statusnya sebagai <em>deus ex machina</em> membuatnya unik.</li>
+                        <li><sup>e</sup> Smileng FU (92 karakter) adalah satu-satunya faksi yang <strong>dimusnahkan sepenuhnya</strong> dalam cerita (Bab 4).</li>
+                        <li><sup>f</sup> Fuyunnis Brianlin tidak pernah bertarung dengan Adre atau Misa — mereka menghadang Malian, bukan protagonis.</li>
+                        <li><sup>g</sup> EX-109 (Long Hand) tidak muncul secara langsung dalam 8 bab. Dia adalah "dalang di balik layar" yang diwakili oleh SIN.</li>
+                        <li><sup>h</sup> "Permukaan" di akhir Bab 8 bisa jadi kebebasan, atau bisa jadi hanya lapisan lain dari loop.</li>
+                        <li><sup>i</sup> Fuyunnis Brianlin memiliki kekuatan tempur di atas Long FU, namun dalam cerita mereka baru muncul di Bab 8.</li>
                     </ol>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="wiki-section">
                     <h2 class="wiki-section-header">Referensi <a class="wiki-edit-link" href="#">[sunting]</a></h2>
                     <ul style="font-size: 12.5px; color: var(--wiki-text-light);">
-                        <li>Database Internal GLG Industries, Bab 1–5.</li>
-                        <li>Catatan Pencipta (Lang) — diskusi desain karakter.</li>
+                        <li>Database Internal GLG Industries, Bab 1–8.</li>
+                        <li>Catatan Pencipta (Lang) — diskusi desain karakter & struktur 8 bab.</li>
                         <li>Dokumentasi Faksi & Hierarki GLG Industries.</li>
                     </ul>
                 </div>
 
-            </div><!-- /wiki-article-text -->
-        </div><!-- /wiki-article-body -->
+            </div>
+        </div>
 
-        <!-- FOOTER -->
         <footer class="wiki-footer">
             <p>Halaman ini terakhir diubah pada 1 Januari 2025, pukul 00:00.</p>
             <p style="margin-top:6px;">Konten tersedia di bawah <a href="#">Lisensi GLG Documentation</a> kecuali dinyatakan lain.</p>
-            <p style="margin-top:6px; color: var(--wiki-border);">• GLG Wiki — Database Karakter GLG Industries •</p>
+            <p style="margin-top:6px; color: var(--wiki-border);">• GLG Wiki — Database Karakter GLG Industries (CH 1–8) •</p>
         </footer>
     </main>
 </div>
 
 <script>
-    // Collapsible
     function toggleCollapsible(header) {
         header.classList.toggle('open');
-        const body = header.nextElementSibling;
-        body.classList.toggle('open');
+        header.nextElementSibling.classList.toggle('open');
     }
 
-    // Smooth scroll for TOC and sidebar links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href').substring(1);
@@ -1858,7 +1585,6 @@
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Update active sidebar link
                 document.querySelectorAll('.wiki-sidebar a').forEach(a => a.classList.remove('active'));
                 const sideLink = document.querySelector(`.wiki-sidebar a[href="#${targetId}"]`);
                 if (sideLink) sideLink.classList.add('active');
@@ -1866,24 +1592,19 @@
         });
     });
 
-    // Search filter (simple highlight)
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             const query = this.value.trim().toLowerCase();
             if (!query) return;
-            
-            // Search in char cards and table cells
-            const allText = document.querySelectorAll('.char-card, .wiki-table td, .group-card-body');
+            const allText = document.querySelectorAll('.char-card, .wiki-table td, .group-card-body, .ch-narrative-body');
             let found = false;
             for (const el of allText) {
                 if (el.textContent.toLowerCase().includes(query)) {
                     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     el.style.outline = '2px solid #3b82f6';
                     el.style.outlineOffset = '2px';
-                    setTimeout(() => {
-                        el.style.outline = 'none';
-                    }, 3000);
+                    setTimeout(() => { el.style.outline = 'none'; }, 3000);
                     found = true;
                     break;
                 }
@@ -1891,11 +1612,7 @@
             if (!found) {
                 const notice = document.createElement('div');
                 notice.className = 'wiki-notice wiki-notice-yellow';
-                notice.style.position = 'fixed';
-                notice.style.top = '60px';
-                notice.style.right = '20px';
-                notice.style.zIndex = '200';
-                notice.style.maxWidth = '320px';
+                notice.style.cssText = 'position:fixed;top:60px;right:20px;z-index:200;max-width:320px;';
                 notice.innerHTML = `<span class="iconify" data-icon="lucide:search-x"></span><div>Tidak ditemukan hasil untuk "<strong>${query}</strong>"</div>`;
                 document.body.appendChild(notice);
                 setTimeout(() => notice.remove(), 3000);
@@ -1903,7 +1620,6 @@
         }
     });
 
-    // Sidebar active state on scroll
     const sections = document.querySelectorAll('.wiki-section[id]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1916,18 +1632,6 @@
         });
     }, { rootMargin: '-20% 0px -70% 0px' });
     sections.forEach(s => observer.observe(s));
-
-    // Animate stats bars on scroll
-    const statsBars = document.querySelectorAll('.stats-bar-fill');
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.width = entry.target.style.width; // trigger reflow
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    statsBars.forEach(bar => statsObserver.observe(bar));
 </script>
 
 </body>
