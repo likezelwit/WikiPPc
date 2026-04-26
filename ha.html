@@ -3,118 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Verifikasi Digital</title>
+    <title>S.V.D | Secure Verification System</title>
     <style>
+        :root {
+            --primary-red: #d90429;
+            --soft-white: #ffffff;
+            --dark-text: #2b2d42;
+            --gray-light: #edf2f4;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--soft-white);
+            color: var(--dark-text);
             margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
+            padding: 20px 10%;
+            background: var(--soft-white);
+            border-bottom: 2px solid var(--gray-light);
         }
-        .container {
-            background-color: #ffffff;
-            width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border-top: 8px solid #d90429; /* Merah Tegas */
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            letter-spacing: -1px;
         }
-        .header {
-            padding: 20px;
-            text-align: center;
-            background-color: #ffffff;
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            margin-left: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
-        .header h1 {
-            color: #d90429;
-            margin: 0;
-            font-size: 24px;
-            letter-spacing: 2px;
-        }
-        .content {
-            padding: 25px;
-            text-align: center;
-        }
-        .qr-placeholder {
-            width: 150px;
-            height: 150px;
-            background-color: #eee;
-            margin: 0 auto 20px;
+
+        /* Hero Section */
+        .hero {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            border: 2px dashed #d90429;
-            border-radius: 10px;
-            color: #d90429;
-            font-weight: bold;
+            text-align: center;
+            padding: 80px 10%;
+            background: linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
         }
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--dark-text);
         }
-        label {
-            display: block;
-            font-size: 12px;
+
+        .hero p {
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 5px;
+            max-width: 600px;
+            margin-bottom: 30px;
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .btn-order {
-            background-color: #d90429;
+
+        .btn-main {
+            background-color: var(--primary-red);
             color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 5px;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.3);
             transition: 0.3s;
         }
-        .btn-order:hover {
-            background-color: #ef233c;
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.4);
         }
-        .footer {
-            padding: 15px;
-            background-color: #f8f9fa;
-            font-size: 10px;
-            color: #999;
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px 10%;
+            background: var(--soft-white);
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid var(--gray-light);
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary-red);
+        }
+
+        .card h3 {
+            color: var(--primary-red);
+            margin-top: 0;
+        }
+
+        /* Secret Note */
+        .disclaimer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 40px 10%;
             text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>SECURE ACCESS</h1>
+<nav>
+    <div class="logo">S.V.D</div>
+    <div class="nav-links">
+        <a href="#">Beranda</a>
+        <a href="#">Aturan</a>
+        <a href="#" style="color: var(--primary-red);">Login Admin</a>
     </div>
-    <div class="content">
-        <div class="qr-placeholder">GENERATE QR</div>
-        <div class="input-group">
-            <label>NAMA NASABAH (SECRET)</label>
-            <input type="text" placeholder="Masukkan nama...">
-        </div>
-        <div class="input-group">
-            <label>NOMINAL PINJAMAN</label>
-            <input type="number" placeholder="Contoh: 400000">
-        </div>
-        <div class="input-group">
-            <label>JAMINAN BARANG</label>
-            <input type="text" placeholder="Contoh: HP, Jam Tangan...">
-        </div>
-        <button class="btn-order">PESAN KODE VERIFIKASI</button>
+</nav>
+
+<section class="hero">
+    <h1>Solusi Cepat & <span style="color: var(--primary-red);">Terpercaya</span></h1>
+    <p>Sistem verifikasi aset dengan jaminan fisik. Aman, tertutup, dan profesional untuk kebutuhan mendesak kamu.</p>
+    <a href="#order" class="btn-main">MULAI PENGAJUAN</a>
+</section>
+
+<section class="features">
+    <div class="card">
+        <h3>1. Ajukan Online</h3>
+        <p>Isi data diri dan tentukan jaminan barang yang setara melalui website.</p>
     </div>
-    <div class="footer">
-        Dilarang membocorkan data transaksi ini kepada pihak ketiga.
+    <div class="card">
+        <h3>2. Verifikasi QR</h3>
+        <p>Dapatkan kode unik untuk diverifikasi langsung oleh petugas (B).</p>
     </div>
+    <div class="card">
+        <h3>3. Cek Fisik</h3>
+        <p>Proses pengecekan kualitas barang selama 24 jam sebelum dana dicairkan.</p>
+    </div>
+</section>
+
+<div class="disclaimer">
+    Sistem ini bersifat privat. Segala bentuk kebocoran informasi akan dikenakan denda atau penalti akun.
+    <br><br>
+    &copy; 2026 S.V.D Project - Created by Gilang
 </div>
 
 </body>
